@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — ArtKart</title>
+<link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WM217K82H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WM217K82H4');
+</script>
+</head>
+<body>
+<div class="page">
+<header><h1>Artist Sign Up</h1></header>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="artworks.html">Artworks</a>
+<a href="upload.html">Upload Art</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section class="form-box">
+<form id="registerForm">
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+  <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="login.html">Login</a></p>
+</section>
+</div>
+<footer>© 2025 ArtKart</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCZ-QeZrs6qJlDk4ZMs9LP2iQ4wjJ2vcF8",
+  authDomain: "artkart-69692.firebaseapp.com",
+  projectId: "artkart-69692",
+  storageBucket: "artkart-69692.appspot.com",
+  messagingSenderId: "1067935304156",
+  appId: "1:1067935304156:web:d8c50769ecb9797f8d6719"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("registerForm").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  const password = e.target.querySelector('input[type="password"]').value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(()=> { alert("Registered!"); window.location.href = "upload.html"; })
+    .catch(err=> alert(err.message));
+});
+</script>
+</body>
+</html>

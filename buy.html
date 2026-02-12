@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Buy Artwork | ArtKart</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.container{max-width:500px;margin:auto;background:#fff;padding:16px;border-radius:10px}
+img{width:100%;border-radius:10px}
+input,button{width:100%;padding:10px;margin-top:10px}
+button{background:#000;color:#fff;border:none;border-radius:6px}
+.art-id{font-size:14px;color:#666}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img id="artImg">
+  <p class="art-id">Art ID: <b id="artId"></b></p>
+  <h2 id="artName"></h2>
+  <p id="artPrice"></p>
+  <p id="artLocation"></p>
+
+  <input id="buyerName" placeholder="Your Name">
+  <input id="buyerCity" placeholder="Your City">
+
+  <button onclick="goToOrder()">Continue</button>
+</div>
+
+<script>
+const q = new URLSearchParams(window.location.search);
+
+document.getElementById("artImg").src = q.get("image");
+document.getElementById("artId").innerText = q.get("artId");
+document.getElementById("artName").innerText = q.get("name");
+document.getElementById("artPrice").innerText = "Price: ₹" + q.get("price");
+document.getElementById("artLocation").innerText = "Location: " + q.get("location");
+
+function goToOrder(){
+  const name = document.getElementById("buyerName").value;
+  const city = document.getElementById("buyerCity").value;
+
+  if(!name || !city){
+    alert("Please fill all details");
+    return;
+  }
+
+  const params = new URLSearchParams({
+    artId: q.get("artId"),
+    name: q.get("name"),
+    price: q.get("price"),
+    location: q.get("location"),
+    image: q.get("image"),
+    buyer: name,
+    city: city
+  });
+
+  window.location.href = "order.html?" + params.toString();
+}
+</script>
+
+</body>
+</html>

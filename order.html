@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Confirm Order | ArtKart</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.container{max-width:500px;margin:auto;background:#fff;padding:16px;border-radius:10px}
+img{width:100%;border-radius:10px}
+button{width:100%;padding:12px;background:#25D366;color:#fff;border:none;border-radius:6px}
+.small{font-size:14px;color:#555}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img id="artImg">
+  <p class="small">Art ID: <b id="artId"></b></p>
+  <h3 id="artName"></h3>
+  <p id="artPrice"></p>
+  <p id="artLocation"></p>
+  <p class="small">Buyer: <span id="buyer"></span></p>
+
+  <button onclick="sendWhatsApp()">Order via WhatsApp</button>
+</div>
+
+<script>
+const q = new URLSearchParams(window.location.search);
+
+document.getElementById("artImg").src = q.get("image");
+document.getElementById("artId").innerText = q.get("artId");
+document.getElementById("artName").innerText = q.get("name");
+document.getElementById("artPrice").innerText = "Price: ₹" + q.get("price");
+document.getElementById("artLocation").innerText = "Location: " + q.get("location");
+document.getElementById("buyer").innerText = q.get("buyer");
+
+function sendWhatsApp(){
+  const orderId = "AK-ORD-" + Math.floor(Math.random()*90000+10000);
+
+  const msg = `
+Hello ArtKart,
+
+I want to buy this artwork.
+
+Art ID: ${q.get("artId")}
+Artwork: ${q.get("name")}
+Price: ₹${q.get("price")}
+Location: ${q.get("location")}
+
+Buyer: ${q.get("buyer")}
+City: ${q.get("city")}
+
+Order ID: ${orderId}
+
+Please guide me for payment.
+`;
+
+  const phone = "9628220891"; // YOUR NUMBER
+  window.open(
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
