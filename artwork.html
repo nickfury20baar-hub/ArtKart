@@ -464,9 +464,38 @@ buyBtn.onclick = () => {
 };
 */
 
-buyBtn.onclick = () => {
-  alert("Buy feature coming soon... Check back after few days.");
-};
+document.addEventListener("DOMContentLoaded", function(){
+
+  const buyBtn = document.getElementById("buyBtn");
+  const loginPopup = document.getElementById("loginPopup");
+  const goLoginBtn = document.getElementById("goLoginBtn");
+  const laterBtn = document.getElementById("laterBtn");
+
+  if (buyBtn) {
+    buyBtn.onclick = () => {
+
+      if (!currentUserId) {
+        loginPopup.style.display = "flex";
+        return;
+      }
+
+      window.location.href = `buy.html?id=${artId}`;
+    };
+  }
+
+  if (goLoginBtn) {
+    goLoginBtn.onclick = () => {
+      window.location.href = "login.html";
+    };
+  }
+
+  if (laterBtn) {
+    laterBtn.onclick = () => {
+      loginPopup.style.display = "none";
+    };
+  }
+
+});
 </script>
   <!-- COMMENTS OVERLAY -->
 <!-- COMMENTS BOTTOM SHEET -->
@@ -496,7 +525,57 @@ buyBtn.onclick = () => {
 
 </div>
 
-<!-- COMMENT OPEN ICON (ADD THIS NEAR LIKE ICON IN META ROW IF NEEDED) -->
+<!-- LOGIN REQUIRED POPUP -->
+<div id="loginPopup" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+z-index:999;
+justify-content:center;
+align-items:center;
+">
+
+  <div style="
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  width:90%;
+  max-width:350px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  ">
+
+    <h3 style="margin-bottom:10px;">Login Required</h3>
+    <p style="font-size:14px;color:#555;margin-bottom:20px;">
+      Please login to continue purchase.
+    </p>
+
+    <button id="goLoginBtn" style="
+      width:100%;
+      padding:12px;
+      background:#6c63ff;
+      color:#fff;
+      border:none;
+      border-radius:10px;
+      margin-bottom:10px;
+      cursor:pointer;
+    ">Login Now</button>
+
+    <button id="laterBtn" style="
+      width:100%;
+      padding:12px;
+      background:#eee;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    ">Later</button>
+
+  </div>
+</div>
 
 </body>
 </html>
