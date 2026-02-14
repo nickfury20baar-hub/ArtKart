@@ -422,20 +422,7 @@
 
 
     
-    import { auth, db } from "./firebase.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-
-    await setDoc(doc(db, "users", user.uid), {
-      email: user.email,
-      role: "user"
-    }, { merge: true });
-
-  }
-});
+    
   </script>
 
 </body>
