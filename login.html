@@ -294,8 +294,7 @@
 
         <div class="options">
           <label><input type="checkbox"> Remember me</label>
-          <a href="#">Forgot password?</a>
-        </div>
+          <a href="#" id="forgotPassword">Forgot password?</a>
 
         <button type="submit" class="btn" id="loginBtn">Login</button>
         <div class="error-msg" id="errorMsg"></div>
@@ -419,7 +418,32 @@
       });
     });
 
+// Forgot Password
+document.getElementById("forgotPassword").addEventListener("click", async (e) => {
+  e.preventDefault();
 
+  const email = document.getElementById("email").value.trim();
+
+  if (!email) {
+    errorMsg.textContent = "Please enter your email first.";
+    return;
+  }
+
+  try {
+    await auth.sendPasswordResetEmail(email);
+    errorMsg.style.color = "#2ed573";
+    errorMsg.textContent = "Password reset link sent to your email.";
+  } catch (err) {
+    errorMsg.style.color = "#ff4757";
+    if (err.code === "auth/user-not-found") {
+      errorMsg.textContent = "No account found with this email.";
+    } else if (err.code === "auth/invalid-email") {
+      errorMsg.textContent = "Invalid email.";
+    } else {
+      errorMsg.textContent = "Something went wrong. Try again.";
+    }
+  }
+});
 
     
     
