@@ -15,6 +15,11 @@
   "logo": "https://art-kart.netlify.app/icons/artkart.png"
 }
 </script>
+  <link rel="manifest" href="/manifest.json">
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
 <link rel="icon" type="image/png" href="icons/favicon.png">
 <link rel="apple-touch-icon" href="icons/favicon.png">
   <!-- Google tag (gtag.js) -->
