@@ -15,8 +15,9 @@
   "logo": "https://art-kart.netlify.app/icons/artkart.png"
 }
 </script>
-  <link rel="manifest" href="/manifest.json">
-
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#0f172a">
+  
 <link rel="icon" type="image/png" href="icons/favicon.png">
 <link rel="apple-touch-icon" href="icons/favicon.png">
   <!-- Google tag (gtag.js) -->
@@ -470,7 +471,7 @@ db.collection("arts")
 </script>
 <script>
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/ArtKart/sw.js");
+  navigator.serviceWorker.register("./service-worker.js");
 }
 </script>
 </body>
