@@ -1,194 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArtKart Blog – Learn, Buy & Sell Art Online</title>
-<meta name="description" content="ArtKart Blog helps you learn how to buy, sell and understand original artwork. Guides for artists and buyers.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art-Kart Ultimate Guide | Features & Usage</title>
+    <style>
+        /* --- CSS VARIABLES FOR THEME MATCHING --- */
+        :root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f8f9fa;
+            --primary-text: #2d3436;
+            --secondary-text: #636e72;
+            --accent-color: #6c5ce7; /* Artistic Purple/Blue */
+            --accent-hover: #5a4ad1;
+            --highlight-color: #fdcb6e; /* Gold/Orange for art vibes */
+            --border-color: #dfe6e9;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-hover: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#f5f5f5;
-    color:#333;
-}
-header{
-    background:#111;
-    padding:15px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-header h1{
-    color:#fff;
-    font-size:22px;
-}
-nav a{
-    color:#fff;
-    margin-left:20px;
-    text-decoration:none;
-    font-size:14px;
-}
-.hero{
-    background:#fff;
-    padding:60px 5%;
-    text-align:center;
-}
-.hero h2{
-    font-size:32px;
-}
-.section{
-    padding:40px 5%;
-}
-.categories{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-.category-box{
-    background:#fff;
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-.posts{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-.post-card{
-    background:#fff;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-.post-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-.post-content{
-    padding:20px;
-}
-.post-content h3{
-    margin:0 0 10px 0;
-}
-.post-content p{
-    font-size:14px;
-    color:#666;
-}
-.read-more{
-    display:inline-block;
-    margin-top:10px;
-    font-size:14px;
-    text-decoration:none;
-    color:#000;
-    font-weight:600;
-}
-footer{
-    background:#111;
-    color:#fff;
-    padding:40px 5%;
-    margin-top:50px;
-}
-.footer-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-.footer-links a{
-    color:#ccc;
-    text-decoration:none;
-    font-size:14px;
-}
-@media(max-width:768px){
-    .hero h2{
-        font-size:24px;
-    }
-}
-</style>
+        /* --- GLOBAL STYLES --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--primary-text);
+            background-color: var(--secondary-bg);
+        }
+
+        a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* --- HEADER STYLING --- */
+        header {
+            background: var(--primary-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-text);
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--accent-color); }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        nav a:hover { color: var(--accent-color); }
+
+        /* --- LAYOUT: MAIN CONTENT + SIDEBAR --- */
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Main Content + Sidebar */
+            gap: 40px;
+        }
+
+        /* --- SIDEBAR & ADVERTISING --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .ad-card {
+            background: var(--primary-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .ad-card h4 { margin-bottom: 15px; color: var(--primary-text); font-size: 1.1rem; }
+        .ad-card p { font-size: 0.9rem; color: var(--secondary-text); margin-bottom: 15px; }
+
+        /* --- MAIN BLOG POST STYLING --- */
+        .main-content {
+            background: var(--primary-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            color: var(--primary-text);
+        }
+
+        .blog-meta {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-intro {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 40px;
+        }
+
+        /* --- FEATURE SECTIONS --- */
+        .feature-block {
+            margin-bottom: 50px;
+        }
+
+        .feature-block h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-block h2::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 30px;
+            background: var(--accent-color);
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        .feature-description {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* --- IMAGE PLACEHOLDERS --- */
+        .img-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-weight: bold;
+            border: 1px dashed var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Simulating an interface for the demo */
+        .ui-mockup {
+            background: white;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 90%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ui-mockup span { font-size: 0.9rem; margin-top: 10px; }
+
+        /* --- STEP BY STEP GUIDES --- */
+        .guide-box {
+            background: var(--secondary-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+
+        .guide-box h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .guide-box ol, .guide-box ul { padding-left: 20px; }
+        .guide-box li { margin-bottom: 10px; }
+
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            .page-wrapper {
+                grid-template-columns: 1fr; /* Stack columns on mobile */
+            }
+            .sidebar {
+                order: 2; /* Move sidebar to bottom on mobile */
+            }
+            .main-content { padding: 20px; }
+            .blog-title { font-size: 1.8rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h1>ArtKart Blog</h1>
-<nav>
-<a href="/">Home</a>
-<a href="/explore.html">Explore Art</a>
-<a href="/sell.html">Sell Art</a>
-<a href="/blog.html">Blog</a>
-<a href="/contact.html">Contact</a>
-</nav>
-</header>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Art<span>Kart</span></div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Categories</a>
+                <a href="#" style="color: var(--accent-color); font-weight: 700;">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero">
-<h2>Learn, Buy & Sell Art Smarter</h2>
-<p>Expert guides for artists and art lovers. Everything about original artwork, pricing, authenticity and shipping.</p>
-</section>
+    <!-- MAIN LAYOUT -->
+    <div class="page-wrapper">
+        
+        <!-- LEFT SIDE: MAIN BLOG CONTENT -->
+        <main class="main-content">
+            
+            <h1 class="blog-title">Mastering the Art of Shopping: The Complete Art-Kart User Guide</h1>
+            <div class="blog-meta">Written by The Art-Kart Team | Last Updated: October 2023 | Reading Time: 8 mins</div>
 
-<section class="section">
-<h2>Categories</h2>
-<div class="categories">
-<div class="category-box">Art Buying Guide</div>
-<div class="category-box">Artist Growth</div>
-<div class="category-box">Art Education</div>
-<div class="category-box">Shipping & Orders</div>
-</div>
-</section>
+            <p class="blog-intro">
+                Welcome to the definitive guide for <strong>Art-Kart</strong>. We built this platform with a singular vision: to make buying art supplies as inspiring as creating art itself. Whether you are a professional illustrator, a hobbyist painter, or a parent shopping for school supplies, this guide will walk you through every feature of our platform to ensure you get the most out of your experience.
+            </p>
 
-<section class="section">
-<h2>Latest Articles</h2>
-<div class="posts">
+            <!-- FEATURE 1: NAVIGATION -->
+            <div class="feature-block">
+                <h2>1. Intelligent Navigation & Search</h2>
+                <p class="feature-description">
+                    The backbone of Art-Kart is our robust search and navigation system. We understand that artists need specific tools, and generic search results just don't cut it. Our system is categorized by medium (Watercolor, Oil, Acrylic) and tool type (Brushes, Canvases, Easels).
+                </p>
+                
+                <!-- Image Explanation -->
+                <div class="img-placeholder">
+                    <div class="ui-mockup">
+                        <div style="background: #eee; padding: 10px; width: 100%; margin-bottom: 10px; border-radius: 4px; display: flex; align-items: center;">
+                            <div style="background: #ddd; width: 20px; height: 20px; margin-right: 10px;"></div>
+                            <div style="background: white; flex-grow: 1; height: 20px; border: 1px solid #ccc; border-radius: 4px;"></div>
+                        </div>
+                        <div style="display: flex; gap: 10px; width: 100%;">
+                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">Category</div>
+                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">Deals</div>
+                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">New</div>
+                        </div>
+                        <span>Fig 1. The Navigation Bar allows quick access to all categories.</span>
+                    </div>
+                </div>
 
-<div class="post-card">
-<img src="images/art1.jpg" alt="How to Buy Original Art">
-<div class="post-content">
-<h3>How to Buy Original Art Online Safely</h3>
-<p>Learn how to check authenticity, pricing and safe payment methods when buying art online.</p>
-<a href="#" class="read-more">Read More →</a>
-</div>
-</div>
+                <div class="guide-box">
+                    <h3>How to use the Smart Search:</h3>
+                    <ol>
+                        <li><strong>Keyword Search:</strong> Type exactly what you need (e.g., "Hog Hair Brush #6") into the search bar. Our predictive text will suggest popular items.</li>
+                        <li><strong>Category Browsing:</strong> Hover over the "Shop" menu to see a dropdown of all categories. This is perfect if you are browsing for inspiration.</li>
+                        <li><strong>Brand Filter:</strong> Looking for a specific brand like Faber-Castell or Winsor & Newton? Use the "Brand" filter in the sidebar on the shop page.</li>
+                    </ol>
+                </div>
+            </div>
 
-<div class="post-card">
-<img src="images/art2.jpg" alt="How to Sell Art">
-<div class="post-content">
-<h3>How to Sell Your Art Online Successfully</h3>
-<p>A beginner-friendly guide for artists who want to grow and earn online.</p>
-<a href="#" class="read-more">Read More →</a>
-</div>
-</div>
+            <!-- FEATURE 2: PRODUCT PAGE -->
+            <div class="feature-block">
+                <h2>2. Detailed Product Visualization</h2>
+                <p class="feature-description">
+                    When buying art supplies online, details matter. You need to know the pigment load, the brush stiffness, and the paper grain. Our product pages are designed to give you a "in-store" feeling with high-resolution zoom features and color-accurate swatches.
+                </p>
 
-<div class="post-card">
-<img src="images/art3.jpg" alt="Art Pricing Guide">
-<div class="post-content">
-<h3>How to Price Your Artwork as a Beginner</h3>
-<p>Understand market value, materials cost and profit strategy.</p>
-<a href="#" class="read-more">Read More →</a>
-</div>
-</div>
+                <!-- Image Explanation -->
+                <div class="img-placeholder" style="background: #fdfdfd;">
+                    <div class="ui-mockup" style="flex-direction: row; align-items: flex-start; text-align: left;">
+                        <div style="width: 40%; height: 150px; background: #eee; margin-right: 20px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">Image Zoom</div>
+                        <div style="flex-grow: 1;">
+                            <div style="height: 20px; width: 50%; background: #333; margin-bottom: 10px;"></div>
+                            <div style="height: 15px; width: 30%; background: var(--accent-color); margin-bottom: 10px;"></div>
+                            <div style="height: 50px; background: #f0f0f0; margin-bottom: 10px;"></div>
+                            <div style="background: var(--highlight-color); color: white; padding: 5px 10px; display: inline-block; border-radius: 4px; font-size: 0.8rem;">Add to Cart</div>
+                        </div>
+                        <span>Fig 2. Product Page Layout focusing on high-res imagery and specs.</span>
+                    </div>
+                </div>
 
-</div>
-</section>
+                <div class="guide-box">
+                    <h3>Using the Product Page Tools:</h3>
+                    <ul>
+                        <li><strong>Image Zoom:</strong> Hover over the main product image to see a magnified view. This helps you see the texture of papers or canvas weave.</li>
+                        <li><strong>Color Swatches:</strong> For paints and markers, click the "View Colors" tab to see a digital swatch chart.</li>
+                        <li><strong>Reviews:</strong> Scroll down to read reviews from other artists. Look for the <span class="highlight">Verified Purchase</span> badge for authentic feedback.</li>
+                    </ul>
+                </div>
+            </div>
 
-<footer>
-<h3>About ArtKart</h3>
-<p>ArtKart is an online art marketplace where artists sell original artwork and buyers discover authentic creations.</p>
+            <!-- FEATURE 3: CHECKOUT -->
+            <div class="feature-block">
+                <h2>3. Seamless Checkout & Payment</h2>
+                <p class="feature-description">
+                    We have streamlined our checkout process to reduce friction. You don't need to create an account to buy, though creating one saves your history. We support secure payments via Credit Card, PayPal, and UPI.
+                </p>
 
-<div class="footer-links">
-<a href="/about.html">About Us</a>
-<a href="/contact.html">Contact</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
-<a href="/terms.html">Terms & Conditions</a>
-<a href="/refund-policy.html">Refund Policy</a>
-<a href="/disclaimer.html">Disclaimer</a>
-</div>
+                <div class="guide-box">
+                    <h3>Step-by-Step Checkout:</h3>
+                    <ol>
+                        <li><strong>The Cart:</strong> Click the Cart Icon in the top right. Here you can adjust quantities. If you have a discount code, enter it in the "Promo Code" box.</li>
+                        <li><strong>Shipping:</strong> Enter your address. Our system auto-detects your location for faster shipping estimates.</li>
+                        <li><strong>Payment:</strong> Select your payment method. All transactions are SSL encrypted for your safety.</li>
+                        <li><strong>Confirmation:</strong> You will receive an email with your Order ID and a tracking link within 24 hours.</li>
+                    </ol>
+                </div>
+            </div>
 
-<p style="margin-top:20px;">© 2026 ArtKart. All rights reserved.</p>
-</footer>
+            <!-- PROMOTIONAL BLOCK FOR ART-KART -->
+            <div class="feature-block" style="background: var(--accent-color); color: white; padding: 30px; border-radius: 12px;">
+                <h2 style="color: white; border: none;">Why Choose Art-Kart?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 0;">
+                    At Art-Kart, we aren't just selling supplies; we are fueling creativity. With our <strong>Price Match Guarantee</strong> and <strong>30-Day Returns</strong>, you can shop with confidence. Join our community today and get <strong>10% off</strong> your first order by subscribing to our newsletter at the bottom of the page!
+                </p>
+            </div>
+
+        </main>
+
+        <!-- RIGHT SIDE: SIDEBAR -->
+        <aside class="sidebar">
+            
+            <!-- ADVERTISEMENT SECTION -->
+            <div class="ad-card">
+                <h4>Grow Your Own Audience</h4>
+                <p>Are you a creator looking to monetize your content? We recommend Collaborator.pro for connecting with top brands and growing your influence.</p>
+                
+                <!-- INSERTED AD CODE -->
+                <a href='https://collaborator.pro/signup?code=gNoXtf' title='Collaborator' target='_blank'>
+                    <img src='https://collaborator.pro/images/referral/promo/en/6.png' width='336' height='280' alt='Collaborator' style="max-width: 100%; height: auto; border-radius: 6px;"/>
+                </a>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #999;">Sponsored</p>
+            </div>
+
+            <!-- ADDITIONAL SIDEBAR WIDGET -->
+            <div class="ad-card">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; text-align: left;">
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Oil Paints Collection</a></li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Sketchbooks & Pads</a></li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Easels & Furniture</a></li>
+                    <li style="padding: 10px 0;"><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background: #2d3436; color: #b2bec3; padding: 40px; text-align: center; margin-top: 40px;">
+        <div class="logo" style="margin-bottom: 20px; color: white;">Art<span style="color: var(--accent-color);">Kart</span></div>
+        <p>© 2023 Art-Kart. All Rights Reserved. Designed for Artists.</p>
+    </footer>
 
 </body>
 </html>
