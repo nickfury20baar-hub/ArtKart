@@ -1,484 +1,1384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArtKart – Original Art Marketplace</title>
-  <meta name="description" content="ArtKart is an online art marketplace to buy original paintings, wall art and handmade artworks from artists.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ArtKart",
-  "url": "https://art-kart.netlify.app",
-  "logo": "https://art-kart.netlify.app/icons/artkart.png"
-}
-</script>
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#0f172a">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArtKart – Original Art Marketplace</title>
+  <meta name="description" content="ArtKart is an online art marketplace to buy original paintings, wall art and handmade artworks from artists across India.">
   
-<link rel="icon" type="image/png" href="icons/favicon.png">
-<link rel="apple-touch-icon" href="icons/favicon.png">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WM217K82H4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+  <!-- ===== SEO META TAGS ===== -->
 
-  gtag('config', 'G-WM217K82H4');
-</script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="keywords" content="
+online art marketplace India,
+buy original paintings online India,
+sell artwork online India,
+Indian artists platform,
+handmade art online India,
+buy paintings online India,
+art selling website India,
+digital art marketplace India,
+buy wall paintings online India,
+affordable paintings online India,
+modern art for home India,
+canvas paintings online India,
+unique handmade gifts India,
+aesthetic wall art India,
+buy sketch art online,
+sell paintings online India,
+how to sell art online India,
+best platform for artists India,
+upload artwork and earn money,
+art selling website without commission,
+earn money from art India,
+where to buy original paintings in India,
+how to sell handmade art online in India,
+best website to sell artwork in India,
+buy affordable wall art for living room India,
+online marketplace for Indian artists,
+AI art assistant website,
+smart art recommendation platform,
+AI powered art marketplace,
+art suggestion AI India
+">
+
+<!-- ===== SEO CONTENT SECTION ===== -->
+<section style="display:none;">
+  <h1>Online Art Marketplace in India - ArtKart</h1>
+
+  <h2>Buy Original Paintings Online</h2>
+  <p>
+    Buy original paintings online in India including canvas art, sketches, digital artwork, and handmade crafts.
+    Discover affordable paintings and aesthetic wall art for your home.
+  </p>
+
+  <h2>Sell Your Artwork Online</h2>
+  <p>
+    Sell paintings online in India with zero commission. Upload your artwork, connect with buyers, and earn money from your art easily.
+  </p>
+
+  <h2>Best Platform for Indian Artists</h2>
+  <p>
+    ArtKart is the best platform for artists in India to showcase their work, build a portfolio, and reach real buyers.
+  </p>
+
+  <h2>AI Powered Art Marketplace</h2>
+  <p>
+    Experience a smart AI art assistant that helps you discover the perfect artwork and guides you through buying and selling.
+  </p>
+</section>
+
+<!-- ===== IMAGE SEO EXAMPLE ===== -->
+
+
+
+
+
+
+
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="apple-touch-icon" href="icons/artKart.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ArtKart",
+    "url": "https://art-kart.netlify.app",
+    "logo": "https://art-kart.netlify.app/icons/artkart.png"
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM217K82H4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WM217K82H4');
+  </script>
+  <style>
+      :root {
+      --primary: #6c63ff;
+      --primary-dark: #5a52e0;
+      --primary-glow: rgba(108, 99, 255, .35);
+      --surface: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #666;
+      --panel-width: 50%;
+      --transition-speed: .35s;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f5f6fa;color:#2d2d2d;line-height:1.7;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
 
+    /* ===== HEADER ===== */
+    header{
+      background:#fff;padding:14px 24px;display:flex;align-items:center;gap:14px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;
+    }
+    header img{width:44px;height:44px;border-radius:8px;}
+    header h1{font-size:20px;font-weight:600;color:#2d2d2d;flex-shrink:0;}
+    .nav-desktop{display:flex;gap:28px;margin-left:36px;}
+    .nav-desktop a{font-size:14px;font-weight:500;color:#555;transition:color .2s;}
+    .nav-desktop a:hover{color:#6c63ff;}
+    .header-right{margin-left:auto;display:flex;gap:10px;align-items:center;}
+    .btn-o{
+      padding:8px 18px;border:1.5px solid #6c63ff;color:#6c63ff;border-radius:8px;
+      font-size:13px;font-weight:500;background:#fff;transition:all .2s;cursor:pointer;
+    }
+    .btn-o:hover{background:#6c63ff;color:#fff;}
+    .btn-f{
+      padding:8px 20px;background:#6c63ff;color:#fff;border:none;border-radius:8px;
+      font-size:13px;font-weight:500;transition:all .2s;cursor:pointer;
+    }
+    .btn-f:hover{background:#5a52e0;}
+    .menu-btn{
+      display:none;background:none;border:none;font-size:26px;color:#2d2d2d;cursor:pointer;
+      margin-left:auto;
+    }
+    @media(max-width:860px){
+      .nav-desktop,.header-right{display:none;}
+      .menu-btn{display:block;}
+    }
 
-<meta name="monetag" content="fac0c41b6090fa9f776269f13a432b88">
-<script src="https://quge5.com/88/tag.min.js" data-zone="222143" async data-cfasync="false"></script>
+    /* Mobile Menu */
+    .mobile-menu{
+      position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.4);
+      opacity:0;pointer-events:none;transition:opacity .3s;
+    }
+    .mobile-menu.open{opacity:1;pointer-events:all;}
+    .mobile-menu-inner{
+      position:absolute;top:0;right:0;width:280px;height:100%;
+      background:#fff;padding:24px;overflow-y:auto;
+      transform:translateX(100%);transition:transform .3s;
+    }
+    .mobile-menu.open .mobile-menu-inner{transform:translateX(0);}
+    .mobile-menu-inner .close-btn{
+      background:none;border:none;font-size:26px;cursor:pointer;
+      color:#2d2d2d;display:block;margin-left:auto;margin-bottom:20px;
+    }
+    .mobile-menu-inner a{
+      display:block;padding:14px 0;font-size:15px;font-weight:500;
+      color:#2d2d2d;border-bottom:1px solid #eee;
+    }
+    .mobile-menu-inner a:hover{color:#6c63ff;}
+    .mobile-menu-inner .mob-btns{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+    .mobile-menu-inner .mob-btns button{width:100%;padding:12px;font-size:14px;}
 
-  
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+    /* ===== HERO ===== */
+    .hero{
+      background:#fff;padding:60px 24px 50px;
+    }
+    .hero-inner{
+      max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:50px;
+    }
+    .hero-text{flex:1;}
+    .hero-text .tag{
+      display:inline-block;padding:5px 14px;background:#f0eeff;color:#6c63ff;
+      border-radius:6px;font-size:12px;font-weight:600;margin-bottom:18px;
+    }
+    .hero-text h2{
+      font-size:clamp(28px,4.5vw,42px);font-weight:700;color:#1a1a2e;
+      line-height:1.25;margin-bottom:16px;
+    }
+    .hero-text h2 span{color:#6c63ff;}
+    .hero-text p{
+      font-size:15px;color:#666;line-height:1.8;margin-bottom:28px;max-width:520px;
+    }
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
+    .btn-lg{
+      padding:13px 30px;border-radius:10px;font-size:14px;font-weight:600;
+      cursor:pointer;transition:all .2s;border:none;
+    }
+    .btn-lg.primary{background:#6c63ff;color:#fff;box-shadow:0 4px 15px rgba(108,99,255,.3);}
+    .btn-lg.primary:hover{background:#5a52e0;transform:translateY(-1px);}
+    .btn-lg.secondary{background:#fff;color:#2d2d2d;border:1.5px solid #ddd;}
+    .btn-lg.secondary:hover{border-color:#6c63ff;color:#6c63ff;}
+    .hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .hero-trust .avatars{display:flex;}
+    .hero-trust .avatars img{
+      width:36px;height:36px;border-radius:50%;border:2px solid #fff;
+      margin-left:-10px;object-fit:cover;
+    }
+    .hero-trust .avatars img:first-child{margin-left:0;}
+    .hero-trust span{font-size:13px;color:#888;}
+    .hero-trust strong{color:#2d2d2d;}
+    .hero-img{flex:1;display:none;}
+    .hero-img img{width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.1);}
+    @media(min-width:860px){.hero-img{display:block;}}
 
-body{
-  background:#0b0b0b;
-  color:#fff;
-  overflow-x:hidden;
-}
+    /* ===== SECTION COMMON ===== */
+    .section{padding:60px 24px;}
+    .section-alt{background:#fff;}
+    .container{max-width:1120px;margin:0 auto;}
+    .section-label{
+      font-size:12px;font-weight:600;color:#6c63ff;text-transform:uppercase;
+      letter-spacing:1.5px;margin-bottom:8px;
+    }
+    .section-heading{
+      font-size:clamp(22px,3.5vw,30px);font-weight:700;color:#1a1a2e;
+      line-height:1.3;margin-bottom:16px;
+    }
+    .section-desc{font-size:15px;color:#666;max-width:620px;line-height:1.8;margin-bottom:36px;}
 
-/* ===== HEADER ===== */
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,15,15,.9);
-  backdrop-filter:blur(10px);
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px 22px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
+    /* ===== ABOUT / WHAT IS ===== */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:30px;}}
+    .about-img{border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);}
+    .about-img img{width:100%;height:320px;object-fit:cover;}
+    .about-text h3{font-size:20px;font-weight:600;margin-bottom:12px;color:#1a1a2e;}
+    .about-text p{font-size:14.5px;color:#555;margin-bottom:14px;line-height:1.8;}
+    .about-list{list-style:none;margin-top:16px;}
+    .about-list li{
+      display:flex;align-items:flex-start;gap:10px;
+      font-size:14px;color:#555;margin-bottom:12px;line-height:1.6;
+    }
+    .about-list li .material-symbols-outlined{
+      font-size:20px;color:#6c63ff;flex-shrink:0;margin-top:2px;
+    }
 
-header img{
-  width:46px;
-  border-radius:8px;
-}
+    /* ===== HOW IT WORKS ===== */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:10px;}
+    @media(max-width:640px){.steps{grid-template-columns:1fr;}}
+    .step{
+      background:#fff;border-radius:14px;padding:32px 24px;text-align:center;
+      border:1px solid #eee;transition:all .25s;
+    }
+    .step:hover{border-color:#6c63ff;box-shadow:0 8px 25px rgba(108,99,255,.1);transform:translateY(-3px);}
+    .step-num{
+      width:44px;height:44px;border-radius:12px;background:#f0eeff;
+      color:#6c63ff;font-size:18px;font-weight:700;
+      display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    }
+    .step h4{font-size:16px;font-weight:600;color:#1a1a2e;margin-bottom:10px;}
+    .step p{font-size:13.5px;color:#777;line-height:1.7;}
 
-header h1{
-  font-size:22px;
-  font-weight:700;
-  letter-spacing:.5px;
-}
+    /* ===== WHY CHOOSE ===== */
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+    @media(max-width:640px){.features-grid{grid-template-columns:1fr;}}
+    .feature{
+      display:flex;gap:18px;padding:24px;background:#f9f9fc;
+      border-radius:14px;border:1px solid #eee;transition:all .25s;
+    }
+    .feature:hover{border-color:#6c63ff;background:#fff;}
+    .feature-icon{
+      width:48px;height:48px;border-radius:12px;background:#f0eeff;
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    }
+    .feature-icon .material-symbols-outlined{font-size:24px;color:#6c63ff;}
+    .feature h4{font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:6px;}
+    .feature p{font-size:13.5px;color:#777;line-height:1.7;}
 
-/* ===== HERO ===== */
-.hero{
-  min-height:75vh;
-  background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1513364776144-60967b0f800f");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 16px;
-}
+    /* ===== ARTWORKS GRID ===== */
+    .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:860px){.art-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.art-grid{grid-template-columns:1fr;}}
+    .art-card{
+      background:#fff;border-radius:14px;overflow:hidden;
+      box-shadow:0 4px 16px rgba(0,0,0,.05);transition:all .2s;
+      display:block;text-decoration:none;color:inherit;
+    }
+    .art-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1);}
+    .art-card img{width:100%;height:200px;object-fit:cover;}
+    .art-card-body{padding:14px 16px 16px;}
+    .art-card-title{font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:3px;}
+    .art-card-artist{font-size:12px;color:#999;margin-bottom:10px;}
+    .art-card-footer{display:flex;justify-content:space-between;align-items:center;}
+    .art-card-price{font-size:15px;font-weight:600;color:#6c63ff;}
+    .art-card-likes{font-size:12px;color:#ff4757;}
 
-.hero h2{
-  font-size:38px;
-  font-weight:700;
-}
+    /* Skeleton */
+    .skel{
+      background:#fff;border-radius:14px;overflow:hidden;
+      box-shadow:0 4px 16px rgba(0,0,0,.05);
+    }
+    .skel-img{
+      height:200px;
+      background:linear-gradient(90deg,#eee 25%,#f5f5f5 50%,#eee 75%);
+      background-size:200% 100%;animation:shim 1.5s infinite;
+    }
+    .skel-body{padding:14px 16px 16px;}
+    .skel-line{
+      height:12px;border-radius:6px;margin-bottom:8px;
+      background:linear-gradient(90deg,#eee 25%,#f5f5f5 50%,#eee 75%);
+      background-size:200% 100%;animation:shim 1.5s infinite;
+    }
+    .skel-line:nth-child(1){width:65%;}
+    .skel-line:nth-child(2){width:40%;height:10px;}
+    .skel-line:nth-child(3){width:35%;margin-top:10px;height:16px;}
+    @keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-.hero p{
-  max-width:640px;
-  margin:16px auto 0;
-  font-size:15px;
-  opacity:.9;
-}
+    /* ===== CATEGORIES ===== */
+    .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    @media(max-width:768px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+    .cat-item{
+      background:#fff;border-radius:14px;padding:24px 18px;text-align:center;
+      border:1px solid #eee;transition:all .25s;cursor:pointer;
+    }
+    .cat-item:hover{border-color:#6c63ff;box-shadow:0 6px 20px rgba(108,99,255,.1);}
+    .cat-item .material-symbols-outlined{font-size:36px;color:#6c63ff;margin-bottom:10px;display:block;}
+    .cat-item h4{font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:4px;}
+    .cat-item p{font-size:12px;color:#999;}
 
-/* ===== SCROLL BACKGROUND ===== */
-.scroll-bg{
-  background-attachment:fixed;
-  background-size:cover;
-  background-position:center;
-  transition:background-image 1s ease;
-}
+    /* ===== TESTIMONIALS ===== */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:768px){.testi-grid{grid-template-columns:1fr;}}
+    .testi{
+      background:#fff;border-radius:14px;padding:28px 24px;
+      border:1px solid #eee;
+    }
+    .testi-stars{color:#fbbf24;font-size:14px;margin-bottom:12px;letter-spacing:2px;}
+    .testi p{font-size:13.5px;color:#555;line-height:1.8;margin-bottom:18px;font-style:italic;}
+    .testi-author{display:flex;align-items:center;gap:12px;}
+    .testi-avatar{
+      width:40px;height:40px;border-radius:50%;background:#f0eeff;
+      display:flex;align-items:center;justify-content:center;
+      font-size:16px;font-weight:600;color:#6c63ff;
+    }
+    .testi-name{font-size:13px;font-weight:600;color:#1a1a2e;}
+    .testi-role{font-size:11px;color:#aaa;}
 
-/* ===== SECTIONS ===== */
-.section{
-  padding:80px 16px;
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);
-}
+    /* ===== FAQ ===== */
+    .faq-list{max-width:720px;}
+    .faq-item{
+      border:1px solid #eee;border-radius:12px;margin-bottom:12px;
+      background:#fff;overflow:hidden;
+    }
+    .faq-q{
+      padding:18px 20px;font-size:14.5px;font-weight:600;color:#1a1a2e;
+      cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+      transition:color .2s;
+    }
+    .faq-q:hover{color:#6c63ff;}
+    .faq-q .material-symbols-outlined{
+      font-size:20px;color:#aaa;transition:transform .3s;
+    }
+    .faq-item.open .faq-q .material-symbols-outlined{transform:rotate(180deg);color:#6c63ff;}
+    .faq-a{
+      max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;
+    }
+    .faq-item.open .faq-a{max-height:300px;padding:0 20px 18px;}
+    .faq-a p{font-size:13.5px;color:#666;line-height:1.8;}
 
-.section-title{
-  font-size:24px;
-  font-weight:700;
-  margin-bottom:30px;
-}
+    /* ===== CTA ===== */
+    .cta{
+      background:linear-gradient(135deg,#6c63ff,#8b7dff);border-radius:20px;
+      padding:60px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;
+    }
+    .cta::before{
+      content:'';position:absolute;top:-40%;right:-10%;width:300px;height:300px;
+      background:rgba(255,255,255,.08);border-radius:50%;
+    }
+    .cta::after{
+      content:'';position:absolute;bottom:-30%;left:-5%;width:200px;height:200px;
+      background:rgba(255,255,255,.06);border-radius:50%;
+    }
+    .cta h2{font-size:clamp(22px,3.5vw,30px);font-weight:700;margin-bottom:12px;position:relative;z-index:1;}
+    .cta p{font-size:15px;opacity:.9;margin-bottom:28px;max-width:500px;margin-inline:auto;position:relative;z-index:1;line-height:1.7;}
+    .cta .btn-lg{background:#fff;color:#6c63ff;position:relative;z-index:1;box-shadow:0 4px 15px rgba(0,0,0,.15);}
+    .cta .btn-lg:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2);}
 
-/* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:34px;
-}
+    /* ===== FOOTER ===== */
+    footer{background:#1a1a2e;padding:60px 24px 24px;color:#fff;}
+    .footer-grid{
+      max-width:1120px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+    }
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px;}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8;margin-top:12px;max-width:300px;}
+    footer h4{font-size:14px;font-weight:600;margin-bottom:16px;color:#fff;}
+    footer .f-link{
+      display:block;font-size:13px;color:rgba(255,255,255,.55);
+      line-height:2.2;transition:color .2s;
+    }
+    footer .f-link:hover{color:#fff;}
+    .footer-bottom{
+      max-width:1120px;margin:40px auto 0;padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    }
+    .footer-bottom span{font-size:12px;color:rgba(255,255,255,.35);}
+    .footer-bottom-links{display:flex;gap:20px;}
+    .footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.35);transition:color .2s;}
+    .footer-bottom-links a:hover{color:#fff;}
+    
+    
+        /* ============================================
+       FLOATING BUTTON
+       ============================================ */
+    .ai-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9998;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--primary) 0%, #8b83ff 100%);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 4px 16px var(--primary-glow),
+        0 2px 6px rgba(0,0,0,.12);
+      transition:
+        transform .25s var(--ease),
+        box-shadow .25s var(--ease),
+        opacity .25s var(--ease);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ai-fab:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 6px 24px var(--primary-glow),
+        0 4px 10px rgba(0,0,0,.15);
+    }
+    .ai-fab:active {
+      transform: scale(.95);
+    }
+    .ai-fab:focus-visible {
+      outline: 3px solid rgba(108,99,255,.5);
+      outline-offset: 3px;
+    }
+    .ai-fab .material-symbols-outlined {
+      font-size: 28px;
+      transition: transform .3s var(--ease), opacity .2s;
+    }
+    .ai-fab .icon-chat { position: absolute; }
+    .ai-fab .icon-close {
+      position: absolute;
+      transform: rotate(-90deg) scale(0);
+      opacity: 0;
+    }
+    .ai-fab.is-open .icon-chat {
+      transform: rotate(90deg) scale(0);
+      opacity: 0;
+    }
+    .ai-fab.is-open .icon-close {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
 
-/* ===== DARK CARD ===== */
-.card{
-  background:linear-gradient(160deg,#141414,#0d0d0d);
-  border-radius:22px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:0 25px 60px rgba(0,0,0,.6);
-  transform:translateY(40px);
-  opacity:0;
-  transition:.6s ease;
-}
+    /* Pulse ring on idle */
+    .ai-fab::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid var(--primary);
+      opacity: 0;
+      animation: fabPulse 3s ease-in-out infinite;
+    }
+    .ai-fab.is-open::before { animation: none; opacity: 0; }
 
-.card.show{
-  transform:translateY(0);
-  opacity:1;
-}
+    @keyframes fabPulse {
+      0%, 100% { transform: scale(1); opacity: 0; }
+      50% { transform: scale(1.25); opacity: .3; }
+    }
 
-.card:hover{
-  transform:scale(1.03);
-  border-color:#6c63ff;
-}
+    /* Badge dot — optional "new" indicator */
+    .ai-fab-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ef4444;
+      border: 2.5px solid var(--surface);
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .25s var(--ease), opacity .2s;
+      pointer-events: none;
+    }
+    .ai-fab.is-open .ai-fab-badge {
+      transform: scale(0);
+      opacity: 0;
+    }
 
-.card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
+    /* ============================================
+       BACKDROP OVERLAY
+       ============================================ */
+    .ai-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0);
+      pointer-events: none;
+      transition: background var(--transition-speed) var(--ease);
+      -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
+    }
+    .ai-backdrop.is-visible {
+      background: rgba(0, 0, 0, 0.4);
+      pointer-events: auto;
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
 
-.card-body{
-  padding:20px;
-}
+    /* ============================================
+       SLIDE PANEL
+       ============================================ */
+    .ai-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: var(--panel-width);
+      height: 100%;
+      height: 100dvh;
+      z-index: 10000;
+      background: var(--surface);
+      box-shadow: -8px 0 40px rgba(0, 0, 0, .12);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform var(--transition-speed) var(--ease);
+      overflow: hidden;
+    }
+    .ai-panel.is-open {
+      transform: translateX(0);
+    }
 
-.title{
-  font-size:18px;
-  font-weight:600;
-}
+    /* Panel header bar */
+    .ai-panel-header {
+      height: 56px;
+      min-height: 56px;
+      background: var(--surface);
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .ai-panel-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(108,99,255,.12), transparent);
+    }
+    .ai-panel-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), #8b83ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ai-panel-logo .material-symbols-outlined {
+      font-size: 18px;
+      color: #fff;
+    }
+    .ai-panel-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+      letter-spacing: -0.01em;
+    }
+    .ai-panel-title span {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 400;
+      color: #aaa;
+      margin-top: -1px;
+    }
+    .ai-panel-actions {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .ai-panel-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all .2s ease;
+      color: #777;
+      position: relative;
+    }
+    .ai-panel-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #f9f8ff;
+    }
+    .ai-panel-btn:active { transform: scale(.92); }
+    .ai-panel-btn:focus-visible {
+      outline: 2px solid rgba(108,99,255,.4);
+      outline-offset: 1px;
+    }
+    .ai-panel-btn .material-symbols-outlined { font-size: 20px; }
+    .ai-panel-btn[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: var(--text);
+      color: #fff;
+      font-size: 10.5px;
+      padding: 3px 9px;
+      border-radius: 5px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .15s ease;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+    .ai-panel-btn[data-tip]:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
 
-.artist{
-  font-size:13px;
-  opacity:.7;
-  margin:6px 0 10px;
-}
+    /* Iframe container */
+    .ai-panel-body {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .ai-panel-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
 
-.meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    /* Loading skeleton inside panel */
+    .ai-panel-loading {
+      position: absolute;
+      inset: 0;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      transition: opacity .3s ease;
+      z-index: 1;
+    }
+    .ai-panel-loading.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .ai-loading-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f0eeff, #e8e5ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: loadPulse 1.5s ease-in-out infinite;
+    }
+    .ai-loading-icon .material-symbols-outlined {
+      font-size: 28px;
+      color: var(--primary);
+    }
+    @keyframes loadPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+    .ai-loading-text {
+      font-size: 13px;
+      color: #aaa;
+      font-weight: 500;
+    }
+    .ai-loading-dots {
+      display: flex;
+      gap: 5px;
+      margin-top: -8px;
+    }
+    .ai-loading-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ccc;
+      animation: dotBounce .5s ease infinite;
+    }
+    .ai-loading-dots span:nth-child(2) { animation-delay: .1s; }
+    .ai-loading-dots span:nth-child(3) { animation-delay: .2s; }
+    @keyframes dotBounce {
+      0%, 100% { opacity: .3; }
+      50% { opacity: 1; }
+    }
 
-.price{
-  font-weight:700;
-  color:#6c63ff;
-}
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      :root { --panel-width: 100%; }
+      .ai-fab {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+      }
+      .ai-fab .material-symbols-outlined { font-size: 26px; }
+      .ai-panel-btn[data-tip]::after { display: none; }
+    }
 
-.likes{
-  background:rgba(255,71,87,.15);
-  color:#ff6b81;
-  padding:6px 16px;
-  border-radius:20px;
-  font-size:13px;
-}
+    @media (max-width: 400px) {
+      .ai-fab {
+        bottom: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+      }
+      .ai-fab .material-symbols-outlined { font-size: 24px; }
+    }
 
-/* ===== FOOTER ===== */
-footer{
-  background:#070707;
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:50px 20px 20px;
-}
-
-.footer-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
-}
-
-footer h3{
-  font-size:16px;
-  margin-bottom:12px;
-}
-
-footer p,footer a{
-  font-size:13px;
-  opacity:.75;
-  line-height:1.8;
-  color:#fff;
-  text-decoration:none;
-}
-
-footer a:hover{
-  opacity:1;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:40px;
-  font-size:12px;
-  opacity:.5;
-}
-
-
-.auth-buttons{
-  margin-left:auto;
-  display:flex;
-  gap:10px;
-}
-
-.btn-outline{
-  padding:6px 14px;
-  border:1px solid #6c63ff;
-  color:#6c63ff;
-  border-radius:20px;
-  font-size:13px;
-  transition:0.3s;
-  border:1px solid #fff;
-}
-.btn-outline:hover{
-  background:#6c63ff;
-  color:#6c63ff;
-}
-
-.btn-fill{
-  padding:6px 14px;
-  background:#6c63ff;
-  color:#fff;
-  border-radius:20px;
-  font-size:13px;
-  transition:0.3s;
-  border:1px solid #6c63ff;
-}
-.btn-fill:hover{
-  opacity:0.85;
-}
-
-
-
-.hero{
-  margin:20px;
-  border-radius:20px;
-  padding:50px 24px;
-  background:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b");
-  background-size:cover;
-  background-position:center;
-  animation:fadeUp 1s ease;
-}
-
-.hero-content{
-  max-width:500px;
-}
-
-.hero h2{
-  font-size:26px;
-  color:#fff;
-  font-weight:600;
-  margin-bottom:10px;
-}
-
-.hero p{
-  color:#ccc;
-  font-size:14px;
-  margin-bottom:24px;
-}
-
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn-main{
-  padding:12px 26px;
-  background:#6c63ff;
-  color:#fff;
-  border-radius:30px;
-  font-size:14px;
-  border:1px solid #6c63ff;
-}
-.btn-main:hover{opacity:.9}
-
-.btn-secondary{
-  padding:12px 26px;
-  border:1px solid #6c63ff;
-  color:#6c63ff;
-  border-radius:30px;
-  font-size:14px;
-  border:1px solid #fff;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(20px)}
-  to{opacity:1; transform:translateY(0)}
-}
-</style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
+<!-- Header -->
 <header>
-  <img src="icons/ArtKart.png">
+  <a href="home.html"><img src="icons/ArtKart.png" alt="ArtKart"></a>
   <h1>ArtKart</h1>
-  <div class="auth-buttons">
-  <button onclick= location.href="login.html" class="btn-outline">Login</button>
-  <button onclick= location.href="register.html" class="btn-fill">Sign Up</button>
-</div>
+  <nav class="nav-desktop">
+    <a href="home.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-right">
+    <button class="btn-o" onclick="location.href='login.html'">Log in</button>
+    <button class="btn-f" onclick="location.href='register.html'">Sign Up</button>
+  </div>
+  <button class="menu-btn" onclick="document.getElementById('mobMenu').classList.add('open')">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
 </header>
-  <a href='https://collaborator.pro/signup?code=gNoXtf' title='Collaborator' target='_blank'><img src='https://collaborator.pro/images/referral/promo/en/1.png' width='468' height='90' alt='Collaborator'/></a>
-<section class="hero">
-  <div class="hero-content">
-    <h2>Discover, Buy & Sell <br> Original Artworks</h2>
-    <p>India’s modern art marketplace for real artists & real collectors.</p>
 
-    <div class="hero-actions">
-      <button onclick= location.href="home.html" class="btn-main">🎨 Get Started</button>
-      <button onclick= location.href="login.html" class="btn-secondary">Login</button>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobMenu" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="mobile-menu-inner">
+    <button class="close-btn" onclick="document.getElementById('mobMenu').classList.remove('open')">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <a href="home.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="about.html">About</a>
+    <a href="seller-profile.html">Become an Artist</a>
+    <a href="contact.html">Contact</a>
+    <div class="mob-btns">
+      <button class="btn-o" onclick="location.href='login.html'">Log in</button>
+      <button class="btn-f" onclick="location.href='register.html'">Sign Up Free</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="tag">India's Art Marketplace</div>
+      <h2>Buy & Sell <span>Original Art</span> From Real Artists</h2>
+      <p>ArtKart connects you directly with talented artists across India. Browse hundreds of original paintings, sketches, digital art, and handmade creations — all in one trusted marketplace.</p>
+      <div class="hero-btns">
+        <button class="btn-lg primary" onclick="location.href='home.html'">Start Exploring</button>
+        <button class="btn-lg secondary" onclick="location.href='register.html'">Create Account</button>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars">
+          <img src="https://i.pravatar.cc/80?img=1" alt="">
+          <img src="https://i.pravatar.cc/80?img=5" alt="">
+          <img src="https://i.pravatar.cc/80?img=12" alt="">
+          <img src="https://i.pravatar.cc/80?img=20" alt="">
+        </div>
+        <span>Trusted by <strong>1,200+</strong> art collectors</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80" alt="Art">
     </div>
   </div>
 </section>
 
-
-
-<div class="scroll-bg" id="scrollBg">
-
-<section class="section">
-  <div class="section-title">Latest Artworks</div>
-  <div class="grid" id="latestGrid"></div>
+<!-- What is ArtKart -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80" alt="Art Gallery">
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Us</div>
+        <h2>What is ArtKart?</h2>
+        <p>ArtKart is an online art marketplace built to give artists a platform to showcase and sell their original work — without middlemen, without galleries taking 50% cuts, and without complicated processes.</p>
+        <p>We believe every artist deserves to be seen, and every art lover deserves access to authentic, affordable artwork. Whether you're a seasoned collector or buying your first piece, ArtKart makes the experience simple and transparent.</p>
+        <ul class="about-list">
+          <li><span class="material-symbols-outlined">check_circle</span> Direct artist-to-buyer connection with no hidden fees</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Every artwork is verified for authenticity before listing</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Secure packaging and tracked delivery across India</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Support for emerging and established artists equally</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- How It Works -->
 <section class="section">
-  <div class="section-title">🔥 Trending Artworks</div>
-  <div class="grid" id="trendingGrid"></div>
+  <div class="container">
+    <div class="section-label">Simple Process</div>
+    <h2 class="section-heading">How It Works</h2>
+    <p class="section-desc">Whether you're buying or selling, ArtKart keeps things straightforward. Here's how you can get started in just a few steps.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Create Your Account</h4>
+        <p>Sign up for free in under a minute. Choose whether you're an art lover looking to buy, or an artist ready to showcase your work to the world.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Browse or Upload Art</h4>
+        <p>Explore hundreds of original artworks sorted by category, price, and popularity. If you're an artist, upload high-quality photos of your work with details and pricing.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Connect & Transact</h4>
+        <p>Buy directly from the artist with secure payments. Artists get notified instantly and ship your artwork carefully packaged to your doorstep.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-</div>
+<!-- Categories -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">Browse by Category</div>
+    <h2 class="section-heading">Find the Art You Love</h2>
+    <p class="section-desc">From traditional Indian art to modern abstract pieces, we have something for every taste and every budget. Explore our most popular categories.</p>
+    <div class="cat-grid">
+      <a href="explore.html" class="cat-item">
+        <span class="material-symbols-outlined">palette</span>
+        <h4>Paintings</h4>
+        <p>Oil, acrylic, watercolor & more</p>
+      </a>
+      <a href="explore.html" class="cat-item">
+        <span class="material-symbols-outlined">draw</span>
+        <h4>Sketches</h4>
+        <p>Pencil, charcoal, pen & ink</p>
+      </a>
+      <a href="explore.html" class="cat-item">
+        <span class="material-symbols-outlined">photo_library</span>
+        <h4>Digital Art</h4>
+        <p>Illustrations, concept art & prints</p>
+      </a>
+      <a href="explore.html" class="cat-item">
+        <span class="material-symbols-outlined">texture</span>
+        <h4>Handmade</h4>
+        <p>Warli, Madhubani, mixed media</p>
+      </a>
+    </div>
+  </div>
+</section>
 
+<!-- Latest Artworks -->
+
+
+<!-- Why Choose Us -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Why ArtKart</div>
+    <h2 class="section-heading">Why Artists & Collectors Choose Us</h2>
+    <p class="section-desc">We're not just another marketplace. ArtKart is built specifically for the Indian art community with features that actually matter.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">verified_user</span></div>
+        <div>
+          <h4>100% Authentic Artwork</h4>
+          <p>Every piece listed on ArtKart is reviewed to ensure it's an original creation. We take authenticity seriously so you can buy with complete confidence and peace of mind.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+        <div>
+          <h4>Fair Pricing, No Middlemen</h4>
+          <p>Artists set their own prices and receive the full amount. We don't add hidden commissions or gallery markups, so you get genuine art at honest prices every time.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+        <div>
+          <h4>Safe & Tracked Delivery</h4>
+          <p>Every artwork is carefully packaged by the artist and shipped with tracking. We ensure your art arrives in perfect condition — from Kashmir to Kanyakumari.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">diversity_3</span></div>
+        <div>
+          <h4>Supporting Emerging Artists</h4>
+          <p>We give equal visibility to new and experienced artists. No follower count requirements, no paid promotions — just pure talent and quality artwork that speaks for itself.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">support_agent</span></div>
+        <div>
+          <h4>Dedicated Support Team</h4>
+          <p>Have a question about an artwork, need help with shipping, or facing a technical issue? Our support team is available to help you resolve any concerns quickly.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><span class="material-symbols-outlined">lock</span></div>
+        <div>
+          <h4>Secure Payment Options</h4>
+          <p>Multiple payment methods supported including UPI, cards, and net banking. All transactions are encrypted and processed through trusted, secure payment gateways.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- For Artists -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="about-grid" style="direction:rtl;">
+      <div class="about-text" style="direction:ltr;">
+        <div class="section-label">For Artists</div>
+        <h2>Turn Your Passion Into Income</h2>
+        <p>If you create art — whether it's paintings, sketches, digital illustrations, or handmade crafts — ArtKart gives you a free platform to reach real buyers across India.</p>
+        <p>No need for a personal website, no social media marketing pressure, and no gallery commissions eating into your earnings. Just upload your work, set your price, and we handle the rest.</p>
+        <ul class="about-list">
+          <li><span class="material-symbols-outlined">check_circle</span> Free artist account with unlimited uploads</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Your own artist profile page with portfolio</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Direct communication with buyers</li>
+          <li><span class="material-symbols-outlined">check_circle</span> Get paid directly to your bank account</li>
+        </ul>
+        <button class="btn-lg primary" style="margin-top:20px;" onclick="location.href='register.html'">Start Selling Today</button>
+      </div>
+      <div class="about-img" style="direction:ltr;">
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80" alt="Artist working">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-heading">What Our Community Says</h2>
+    <p class="section-desc">Real feedback from artists and collectors who are part of the ArtKart community.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p>"I sold my first painting within a week of joining ArtKart. The platform is simple, clean, and actually works for artists like me who don't have a big social media following."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-role">Watercolor Artist, Jaipur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p>"As a collector, I love that every artwork comes with artist details and backstory. It makes the purchase feel personal and meaningful, not just transactional."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rahul Mehta</div>
+            <div class="testi-role">Art Collector, Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p>"The packaging was excellent and the painting arrived in perfect condition. ArtKart's delivery process gave me confidence to order more. Already bought three pieces!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Anjali Desai</div>
+            <div class="testi-role">Art Enthusiast, Bangalore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-heading">Frequently Asked Questions</h2>
+    <p class="section-desc">Everything you need to know about using ArtKart, from buying to selling to shipping.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Is ArtKart free to use?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>Yes, creating an account and browsing artworks is completely free. For artists, listing your artwork is also free. We only charge a small platform fee when a sale is successfully completed.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How do I know the artwork is original?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>Every artwork on ArtKart is uploaded directly by the artist. We verify artist identities during registration and review listings for quality. Each piece comes with the artist's profile, so you can see who created it and contact them directly if needed.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What if I don't like the artwork after receiving it?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>We understand that buying art online can feel uncertain. ArtKart has a refund policy that covers significant discrepancies between the listing and the received artwork. Contact our support team within 48 hours of delivery with photos, and we'll help resolve it.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How does delivery work?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>Once you purchase an artwork, the artist is notified and packages the piece carefully. Shipping is tracked and typically delivered within 5-10 business days depending on your location. You'll receive tracking details via email and can monitor your order status.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can I become a seller on ArtKart?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>Absolutely! Anyone who creates original art can become a seller. Simply register, set up your artist profile, and start uploading your work. There's no approval process or minimum follower requirement — if you make art, you can sell it on ArtKart.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What payment methods are accepted?
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="faq-a"><p>We support UPI (Google Pay, PhonePe, Paytm), credit and debit cards, net banking, and popular wallets. All payments are processed through secure, encrypted gateways to ensure your financial information stays safe.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to Start Your Art Journey?</h2>
+      <p>Join thousands of artists and collectors on India's fastest-growing art marketplace. It only takes a minute to get started.</p>
+      <button class="btn-lg" onclick="location.href='register.html'">Create Free Account</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="footer-grid">
-    <div>
-     <a href="about.html"> <h3>About ArtKart</h3> </a>
-      <p>ArtKart is an online marketplace focused on original and authentic artworks. Every piece comes directly from the artist.</p>
+    <div class="footer-brand">
+      <a href="home.html" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <img src="icons/ArtKart.png" alt="ArtKart" style="width:36px;height:36px;border-radius:8px;">
+        <span style="font-size:18px;font-weight:600;">ArtKart</span>
+      </a>
+      <p>India's modern art marketplace connecting real artists with real collectors. Original artwork, fair prices, secure delivery.</p>
     </div>
-
     <div>
-      <h3>Explore</h3>
-      <a href="home.html">Home</a><br>
-      <a href="explore.html">Latest Art</a><br>
-      <a href="home.html">Trending</a><br>
-      <a href="seller-profile.html">Become an Artist</a>
+      <h4>Explore</h4>
+      <a href="home.html" class="f-link">Home</a>
+      <a href="explore.html" class="f-link">Latest Art</a>
+      <a href="home.html" class="f-link">Trending</a>
+      <a href="seller-profile.html" class="f-link">Become an Artist</a>
     </div>
-
     <div>
-      <h3>Support</h3>
-      <a href="#">How it Works</a><br>
-      <a href="#">Refund Policy</a><br>
-      <a href="contact.html">Contact Us</a>
-      <a href="blog.html">Blog</a>
+      <h4>Support</h4>
+      <a href="about.html" class="f-link">How it Works</a>
+      <a href="privacy-policy.html" class="f-link">Refund Policy</a>
+      <a href="contact.html" class="f-link">Contact Us</a>
     </div>
-
     <div>
-      <h3>Connect</h3>
-      <a href="#">Instagram</a><br>
-      <a href="#">YouTube</a><br>
-      <a href="#">Twitter</a>
+      <h4>Connect</h4>
+      <a href="https://youtube.com/@techaromax?si=JDODmm9wPcTzxgYf" class="f-link">YouTube</a>
+      <a href="about.html" class="f-link">About ArtKart</a>
+      <a href="privacy-policy.html" class="f-link">Privacy Policy</a>
     </div>
   </div>
-
   <div class="footer-bottom">
-    <a href="about.html">About   |</a>
-    <a href="privacy-policy.html">Privacy Policy   |</a>
-    <a href="contact.html">Contact   |</a>
-    <br>
-    © 2026 ArtKart • Crafted for Art Lovers 🎨
+    <span>© 2026 ArtKart. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 </footer>
+  <!-- ==========================================
+       FLOATING AI ASSISTANT SYSTEM
+       Copy everything below into any page
+       ========================================== -->
 
+  <!-- Backdrop overlay -->
+  <div class="ai-backdrop" id="aiBackdrop" aria-hidden="true"></div>
+
+  <!-- Slide panel -->
+  <aside class="ai-panel" id="aiPanel" role="dialog" aria-modal="true" aria-label="ArtKart AI Assistant">
+    <!-- Panel header -->
+    <div class="ai-panel-header">
+      <div class="ai-panel-logo">
+        <span class="material-symbols-outlined">smart_toy</span>
+      </div>
+      <div class="ai-panel-title">
+        ArtKart AI
+        <span>Your art assistant</span>
+      </div>
+      <div class="ai-panel-actions">
+        <button class="ai-panel-btn" id="aiFullscreenBtn" data-tip="Open full page" aria-label="Open full page" title="Open full page">
+          <span class="material-symbols-outlined">open_in_new</span>
+        </button>
+        <button class="ai-panel-btn" id="aiCloseBtn" data-tip="Close" aria-label="Close panel" title="Close panel">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Iframe body -->
+    <div class="ai-panel-body" id="aiPanelBody">
+      <!-- Loading skeleton -->
+      <div class="ai-panel-loading" id="aiPanelLoading">
+        <div class="ai-loading-icon">
+          <span class="material-symbols-outlined">smart_toy</span>
+        </div>
+        <div class="ai-loading-text">Loading assistant</div>
+        <div class="ai-loading-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <!-- iframe injected here by JS when panel opens -->
+    </div>
+  </aside>
+
+  <!-- Floating action button -->
+  <button class="ai-fab" id="aiFab" aria-label="Open ArtKart AI Assistant" title="Chat with ArtKart AI">
+    <span class="material-symbols-outlined icon-chat">smart_toy</span>
+    <span class="material-symbols-outlined icon-close">close</span>
+    <div class="ai-fab-badge" id="aiFabBadge">1</div>
+  </button>
+
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
 <script>
-firebase.initializeApp({
-  apiKey: "AIzaSyCZ-QeZrs6qJlDk4ZMs9LP2iQ4wjJ2vcF8",
-  authDomain: "artkart-69692.firebaseapp.com",
-  projectId: "artkart-69692"
-});
-const db = firebase.firestore();
+  firebase.initializeApp({
+    apiKey: "AIzaSyCZ-QeZrs6qJlDk4ZMs9LP2iQ4wjJ2vcF8",
+    authDomain: "artkart-69692.firebaseapp.com",
+    projectId: "artkart-69692",
+    storageBucket: "artkart-69692.appspot.com",
+    messagingSenderId: "1067935304156",
+    appId: "1:1067935304156:web:d8c50769ecb9797f8d6719"
+  });
+  const db = firebase.firestore();
 
-/* ===== BACKGROUND ON SCROLL ===== */
-const bgImages=[
- "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
- "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1",
- "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
- "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
-];
-let bgIndex=0;
-window.addEventListener("scroll",()=>{
-  if(window.scrollY%450<10){
-    bgIndex=(bgIndex+1)%bgImages.length;
-    scrollBg.style.backgroundImage=
-      `linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url(${bgImages[bgIndex]})`;
+  function makeCard(doc) {
+    const d = doc.data();
+    const card = document.createElement("a");
+    card.href = "artwork.html?id=" + doc.id;
+    card.className = "art-card";
+    card.innerHTML =
+      '<img src="' + (d.imageUrl || "https://via.placeholder.com/300?text=Image") + '" alt="' + (d.title || "Artwork") + '" loading="lazy">' +
+      '<div class="art-card-body">' +
+        '<div class="art-card-title">' + (d.title || "Untitled") + '</div>' +
+        '<div class="art-card-artist">by ' + (d.artistName || "Unknown") + '</div>' +
+        '<div class="art-card-footer">' +
+          '<span class="art-card-price">₹' + (d.price || 0).toLocaleString() + '</span>' +
+          '<span class="art-card-likes">❤️ ' + (d.likeCount || 0) + '</span>' +
+        '</div>' +
+      '</div>';
+    return card;
   }
-});
 
-/* ===== ANIMATION ===== */
-const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
-},{threshold:.2});
+  // Latest
+  db.collection("arts").orderBy("createdAt", "desc").limit(6).get().then(function(snap) {
+    var grid = document.getElementById("latestGrid");
+    grid.innerHTML = "";
+    if (snap.empty) {
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#999;padding:40px 0;">No artworks uploaded yet. Check back soon!</p>';
+      return;
+    }
+    snap.forEach(function(doc) { grid.appendChild(makeCard(doc)); });
+  }).catch(function(err) {
+    console.error(err);
+    document.getElementById("latestGrid").innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#999;padding:40px 0;">Failed to load artworks.</p>';
+  });
 
-function makeCard(doc){
-  const d=doc.data();
-  const c=document.createElement("div");
-  c.className="card";
-  c.innerHTML=`
-    <img src="${d.imageUrl}">
-    <div class="card-body">
-      <div class="title">${d.title}</div>
-      <div class="artist">by ${d.artistName}</div>
-      <div class="meta">
-        <div class="price">₹${d.price}</div>
-        <div class="likes">❤️ ${d.likeCount||0}</div>
-      </div>
-    </div>`;
-  observer.observe(c);
-  return c;
-}
+  // Trending
+  db.collection("arts").orderBy("likeCount", "desc").limit(6).get().then(function(snap) {
+    var grid = document.getElementById("trendingGrid");
+    grid.innerHTML = "";
+    if (snap.empty) {
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#999;padding:40px 0;">No trending artworks yet.</p>';
+      return;
+    }
+    snap.forEach(function(doc) { grid.appendChild(makeCard(doc)); });
+  }).catch(function(err) {
+    console.error(err);
+    document.getElementById("trendingGrid").innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#999;padding:40px 0;">Failed to load trending artworks.</p>';
+  });
+  
+  // floating button
+  
+  
+    (function() {
+    'use strict';
 
-db.collection("arts")
-  .limit(6)
-  .get()
-  .then(snap=>{
-    snap.forEach(d=>latestGrid.appendChild(makeCard(d)));
-  })
-  .catch(err=>console.error(err));
+    /* ===== CONFIG ===== */
+    var IFRAME_SRC = 'agent.html';
+    var SESSION_KEY = 'artkart_ai_panel_open';
 
-db.collection("arts")
-  .orderBy("likeCount","desc")
-  .limit(6)
-  .get()
-  .then(snap=>{
-    snap.forEach(d=>trendingGrid.appendChild(makeCard(d)));
-  })
-  .catch(err=>console.error(err));
-</script>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./service-worker.js");
-}
+    /* ===== STATE ===== */
+    var isOpen = false;
+    var iframeLoaded = false;
+    var iframeEl = null;
+
+    /* ===== DOM ===== */
+    var fab = document.getElementById('aiFab');
+    var badge = document.getElementById('aiFabBadge');
+    var backdrop = document.getElementById('aiBackdrop');
+    var panel = document.getElementById('aiPanel');
+    var panelBody = document.getElementById('aiPanelBody');
+    var loadingEl = document.getElementById('aiPanelLoading');
+    var closeBtn = document.getElementById('aiCloseBtn');
+    var fullscreenBtn = document.getElementById('aiFullscreenBtn');
+
+    /* ===== CORE: OPEN PANEL ===== */
+    function openPanel() {
+      if (isOpen) return;
+      isOpen = true;
+
+      // Toggle classes
+      fab.classList.add('is-open');
+      backdrop.classList.add('is-visible');
+      panel.classList.add('is-open');
+
+      // Save state to sessionStorage
+      try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e) {}
+
+      // Lazy-load iframe only on first open
+      if (!iframeLoaded) {
+        iframeEl = document.createElement('iframe');
+        iframeEl.setAttribute('src', IFRAME_SRC);
+        iframeEl.setAttribute('loading', 'eager');
+        iframeEl.setAttribute('title', 'ArtKart AI Chat');
+        iframeEl.addEventListener('load', function() {
+          // Hide loading skeleton once iframe content is ready
+          loadingEl.classList.add('is-hidden');
+        });
+        panelBody.appendChild(iframeEl);
+        iframeLoaded = true;
+      }
+
+      // Prevent body scroll when panel is open
+      document.body.style.overflow = 'hidden';
+
+      // Focus trap hint for screen readers
+      closeBtn.focus();
+    }
+
+    /* ===== CORE: CLOSE PANEL ===== */
+    function closePanel() {
+      if (!isOpen) return;
+      isOpen = false;
+
+      fab.classList.remove('is-open');
+      backdrop.classList.remove('is-visible');
+      panel.classList.remove('is-open');
+
+      // Clear session state
+      try { sessionStorage.removeItem(SESSION_KEY); } catch(e) {}
+
+      // Restore body scroll
+      document.body.style.overflow = '';
+
+      // Return focus to FAB for accessibility
+      fab.focus();
+    }
+
+    /* ===== TOGGLE ===== */
+    function togglePanel() {
+      isOpen ? closePanel() : openPanel();
+    }
+
+    /* ===== FULLSCREEN ===== */
+    function openFullscreen() {
+      window.location.href = IFRAME_SRC;
+    }
+
+    /* ===== HIDE BADGE ===== */
+    function dismissBadge() {
+      if (badge) {
+        badge.style.display = 'none';
+      }
+    }
+
+    /* ===== RESTORE SESSION STATE ===== */
+    function restoreState() {
+      try {
+        var wasOpen = sessionStorage.getItem(SESSION_KEY);
+        if (wasOpen === '1') {
+          openPanel();
+        }
+      } catch(e) {}
+    }
+
+    /* ===== EVENT LISTENERS ===== */
+
+    // FAB click
+    fab.addEventListener('click', function() {
+      dismissBadge();
+      togglePanel();
+    });
+
+    // Close button
+    closeBtn.addEventListener('click', closePanel);
+
+    // Fullscreen button
+    fullscreenBtn.addEventListener('click', openFullscreen);
+
+    // Backdrop click
+    backdrop.addEventListener('click', closePanel);
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) {
+        closePanel();
+      }
+    });
+
+    /* ===== INIT ===== */
+    restoreState();
+
+  })();
 </script>
 </body>
 </html>
