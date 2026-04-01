@@ -1,387 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art-Kart Ultimate Guide | Features & Usage</title>
-    <script type="text/javascript" data-cfasync="false">
-        //PopAds
-/*<![CDATA[/* */
-(function(){var s=window,x="d2d6836d59704f88343a078f51ea8782",z=[["siteId",443-343+813-383+5285952],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],g=["d3d3LmludGVsbGlwb3B1cC5jb20vVFpvVElIL09wL2Vsb3cubWluLmpz","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvZGhvZ2FuLm1pbi5qcw=="],w=-1,l,y,q=function(){clearTimeout(y);w++;if(g[w]&&!(1800427999000<(new Date).getTime()&&1<w)){l=s.document.createElement("script");l.type="text/javascript";l.async=!0;var t=s.document.getElementsByTagName("script")[0];l.src="https://"+atob(g[w]);l.crossOrigin="anonymous";l.onerror=q;l.onload=function(){clearTimeout(y);s[x.slice(0,16)+x.slice(0,16)]||q()};y=setTimeout(q,5E3);t.parentNode.insertBefore(l,t)}};if(!s[x]){try{Object.freeze(s[x]=z)}catch(e){}q()}})();
-/*]]>/* */
-    </script>
-    <style>
-        /* --- CSS VARIABLES FOR THEME MATCHING --- */
-        :root {
-            --primary-bg: #ffffff;
-            --secondary-bg: #f8f9fa;
-            --primary-text: #2d3436;
-            --secondary-text: #636e72;
-            --accent-color: #6c5ce7; /* Artistic Purple/Blue */
-            --accent-hover: #5a4ad1;
-            --highlight-color: #fdcb6e; /* Gold/Orange for art vibes */
-            --border-color: #dfe6e9;
-            --shadow: 0 4px 6px rgba(0,0,0,0.05);
-            --shadow-hover: 0 10px 20px rgba(0,0,0,0.1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* --- GLOBAL STYLES --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--primary-text);
-            background-color: var(--secondary-bg);
-        }
 
-        a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
-        a:hover { color: var(--accent-hover); }
 
-        /* --- HEADER STYLING --- */
-        header {
-            background: var(--primary-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-text);
-            letter-spacing: -1px;
-        }
-        .logo span { color: var(--accent-color); }
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--secondary-text);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        nav a:hover { color: var(--accent-color); }
 
-        /* --- LAYOUT: MAIN CONTENT + SIDEBAR --- */
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 300px; /* Main Content + Sidebar */
-            gap: 40px;
-        }
+<title>ArtKart – Complete Guide </title>
+<meta name="description" content="Complete guide to ArtKart – India's online art marketplace. Learn how to buy original paintings, upload and sell your artwork, payment methods, delivery, refunds, and artist profiles. Step-by-step instructions for buyers and sellers.">
+<meta name="keywords" content="ArtKart guide, ArtKart how to use, how to buy art on ArtKart, how to sell art on ArtKart, ArtKart upload artwork, ArtKart payment methods, ArtKart delivery, ArtKart refund policy, ArtKart artist profile, Indian art marketplace, buy original paintings India, sell artwork online India, ArtKart explore, ArtKart registration, original art online India">
+<meta name="author" content="ArtKart">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://art-kart.netlify.app/guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Complete ArtKart Guide – How to Buy, Sell & Explore Original Art in India">
+<meta property="og:description" content="Complete guide to ArtKart – India's online art marketplace. Learn how to buy original paintings, upload and sell your artwork, payment methods, delivery, refunds, and artist profiles.">
+<meta property="og:url" content="https://art-kart.netlify.app/guide.html">
+<meta property="og:image" content="https://art-kart.netlify.app/icons/ArtKart.png">
+<meta property="og:site_name" content="ArtKart">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Complete ArtKart Guide – Buy, Sell & Explore Art">
+<meta name="twitter:description" content="Complete guide to ArtKart – India's online art marketplace. Learn how to buy, sell, upload art, payments, delivery & refunds.">
+<meta name="twitter:image" content="https://art-kart.netlify.app/icons/ArtKart.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "headline": "The Complete ArtKart Guide – How to Buy, Sell & Explore Original Art in India",
+  "description": "Complete guide to ArtKart – India's online art marketplace. Learn how to buy original paintings, upload and sell your artwork, payment methods, delivery, refunds, and artist profiles.",
+  "image": "https://art-kart.netlify.app/icons/ArtKart.png",
+  "author": {
+    "@type": "Organization",
+    "name": "ArtKart",
+    "url": "https://art-kart.netlify.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ArtKart",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://art-kart.netlify.app/icons/ArtKart.png"
+    }
+  },
+  "url": "https://art-kart.netlify.app/guide.html",
+  "datePublished": "2025-06-01",
+  "dateModified": "2025-06-01",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://art-kart.netlify.app/guide.html"
+  }
+}
+</script>
 
-        /* --- SIDEBAR & ADVERTISING --- */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
 
-        .ad-card {
-            background: var(--primary-bg);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-        }
 
-        .ad-card h4 { margin-bottom: 15px; color: var(--primary-text); font-size: 1.1rem; }
-        .ad-card p { font-size: 0.9rem; color: var(--secondary-text); margin-bottom: 15px; }
 
-        /* --- MAIN BLOG POST STYLING --- */
-        .main-content {
-            background: var(--primary-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
 
-        .blog-title {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            line-height: 1.2;
-            color: var(--primary-text);
-        }
 
-        .blog-meta {
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
 
-        .blog-intro {
-            font-size: 1.1rem;
-            color: var(--secondary-text);
-            margin-bottom: 40px;
-        }
 
-        /* --- FEATURE SECTIONS --- */
-        .feature-block {
-            margin-bottom: 50px;
-        }
 
-        .feature-block h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary-text);
-            display: flex;
-            align-items: center;
-        }
+<link rel="icon" type="image/png" href="icons/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+:root{
+  --primary-bg:#fff;--secondary-bg:#f8f9fa;--primary-text:#2d3436;
+  --secondary-text:#636e72;--accent:#6c5ce7;--accent-hover:#5a4ad1;
+  --highlight:#fdcb6e;--border:#dfe6e9;
+  --shadow:0 4px 6px rgba(0,0,0,.05);--shadow-hover:0 10px 20px rgba(0,0,0,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;line-height:1.7;color:var(--primary-text);background:var(--secondary-bg);}
+a{color:var(--accent);text-decoration:none;transition:.3s;}
+a:hover{color:var(--accent-hover);}
 
-        .feature-block h2::before {
-            content: '';
-            display: block;
-            width: 5px;
-            height: 30px;
-            background: var(--accent-color);
-            margin-right: 15px;
-            border-radius: 2px;
-        }
+header{background:var(--primary-bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;}
+.header-container{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.6rem;font-weight:700;color:var(--primary-text);display:flex;align-items:center;gap:8px;}
+.logo img{width:36px;height:36px;border-radius:8px;}
+.logo span{color:var(--accent);}
+nav a{margin-left:18px;color:var(--secondary-text);font-weight:500;font-size:.9rem;}
+nav a:hover{color:var(--accent);}
+nav a.active{color:var(--accent);font-weight:700;}
+.menu-toggle{display:none;background:none;border:none;font-size:26px;color:var(--primary-text);cursor:pointer;}
+@media(max-width:768px){
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;flex-direction:column;gap:12px;}
+  nav.open{display:flex;}
+  nav a{margin:0;}
+  .menu-toggle{display:block;}
+}
 
-        .feature-description {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
+.page-wrapper{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:36px;}
+@media(max-width:960px){.page-wrapper{grid-template-columns:1fr;}.sidebar{order:2;}}
 
-        /* --- IMAGE PLACEHOLDERS --- */
-        .img-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #f0f0f0;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-weight: bold;
-            border: 1px dashed var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Simulating an interface for the demo */
-        .ui-mockup {
-            background: white;
-            border: 1px solid #eee;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 20px;
-            width: 90%;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .ui-mockup span { font-size: 0.9rem; margin-top: 10px; }
+.main-content{background:var(--primary-bg);padding:36px 40px;border-radius:12px;box-shadow:var(--shadow);}
+@media(max-width:600px){.main-content{padding:22px 18px;}}
 
-        /* --- STEP BY STEP GUIDES --- */
-        .guide-box {
-            background: var(--secondary-bg);
-            border-left: 4px solid var(--accent-color);
-            padding: 25px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 20px;
-        }
+.blog-title{font-size:2.2rem;line-height:1.2;color:var(--primary-text);margin-bottom:10px;}
+.blog-meta{color:var(--secondary-text);font-size:.85rem;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--border);}
+.blog-intro{font-size:1.05rem;color:var(--secondary-text);margin-bottom:36px;}
 
-        .guide-box h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .guide-box ol, .guide-box ul { padding-left: 20px; }
-        .guide-box li { margin-bottom: 10px; }
+.feature-block{margin-bottom:44px;}
+.feature-block h2{font-size:1.6rem;margin-bottom:14px;color:var(--primary-text);display:flex;align-items:center;gap:12px;}
+.feature-block h2::before{content:'';width:5px;height:28px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.feature-desc{margin-bottom:16px;font-size:.98rem;color:#444;line-height:1.85;}
 
-        .highlight {
-            background-color: var(--highlight-color);
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+/* Screenshot mockups */
+.screenshot-frame{
+  width:100%;border-radius:10px;overflow:hidden;margin:20px 0;
+  border:1px solid var(--border);box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+.screenshot-bar{
+  background:#f1f3f5;padding:8px 12px;display:flex;align-items:center;gap:6px;
+  border-bottom:1px solid var(--border);
+}
+.screenshot-dot{width:10px;height:10px;border-radius:50%;}
+.screenshot-dot.r{background:#ff5f57;}.screenshot-dot.y{background:#ffbd2e;}.screenshot-dot.g{background:#28ca42;}
+.screenshot-url{
+  flex:1;margin-left:10px;background:#fff;padding:4px 12px;border-radius:6px;
+  font-size:.75rem;color:#999;border:1px solid #eee;
+}
+.screenshot-body{background:#f5f6fa;padding:16px;min-height:220px;position:relative;overflow:hidden;}
 
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 900px) {
-            .page-wrapper {
-                grid-template-columns: 1fr; /* Stack columns on mobile */
-            }
-            .sidebar {
-                order: 2; /* Move sidebar to bottom on mobile */
-            }
-            .main-content { padding: 20px; }
-            .blog-title { font-size: 1.8rem; }
-        }
-    </style>
+/* Phone mockup */
+.phone-mockup{
+  width:260px;margin:0 auto;background:#0b0b0b;border-radius:24px;overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.2);border:3px solid #222;
+}
+.phone-bar{background:#141414;padding:8px 12px;display:flex;align-items:center;justify-content:center;gap:4px;}
+.phone-bar span{font-size:.7rem;color:#888;}
+.phone-content{padding:0;min-height:380px;}
+.phone-header{background:rgba(15,15,15,.9);padding:10px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.08);}
+.phone-header img{width:28px;height:28px;border-radius:6px;background:#333;}
+.phone-header span{font-size:.8rem;color:#fff;font-weight:600;}
+.phone-quick{display:flex;padding:12px;gap:8px;}
+.phone-quick-item{flex:1;text-align:center;background:rgba(255,255,255,.06);border-radius:10px;padding:10px 4px;}
+.phone-quick-item .material-symbols-outlined{font-size:22px;color:#6c63ff;display:block;margin:0 auto 4px;}
+.phone-quick-item span{font-size:.6rem;color:#888;display:block;}
+.phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 12px;}
+.phone-card{background:#141414;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.06);}
+.phone-card img{width:100%;height:80px;object-fit:cover;background:#222;}
+.phone-card-body{padding:6px 8px 8px;}
+.phone-card-body p:first-child{font-size:.65rem;color:#fff;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.phone-card-body p:nth-child(2){font-size:.55rem;color:#888;}
+.phone-card-body .phone-meta{display:flex;justify-content:space-between;margin-top:4px;}
+.phone-card-body .phone-meta span{font-size:.6rem;}
+.phone-card-body .phone-meta .pp{color:#6c63ff;font-weight:600;}
+.phone-card-body .phone-meta .pl{color:#ff4757;}
+.phone-bottom-nav{display:flex;background:#141414;border-top:1px solid rgba(255,255,255,.08);padding:8px 0;}
+.phone-bottom-nav .pnav{flex:1;text-align:center;}
+.phone-bottom-nav .pnav .material-symbols-outlined{font-size:18px;color:#666;display:block;margin:0 auto 2px;}
+.phone-bottom-nav .pnav span{font-size:.55rem;color:#666;display:block;}
+.phone-bottom-nav .pnav.act .material-symbols-outlined{color:#6c63ff;}
+.phone-bottom-nav .pnav.act span{color:#6c63ff;}
+
+/* Desktop mockup */
+.desktop-mockup{
+  background:#f5f6fa;border-radius:0;min-height:180px;
+}
+.dm-header{background:#fff;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.dm-header img{width:32px;height:32px;border-radius:6px;background:#eee;}
+.dm-header h3{font-size:.85rem;font-weight:600;color:#2d2d2d;}
+.dm-header .dm-btns{margin-left:auto;display:flex;gap:6px;}
+.dm-header .dm-btns span{font-size:.65rem;padding:4px 12px;border-radius:20px;border:1px solid #ddd;color:#666;}
+.dm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px;}
+.dm-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.05);}
+.dm-card img{width:100%;height:90px;object-fit:cover;background:#eee;}
+.dm-card-body{padding:8px 10px 10px;}
+.dm-card-body p:first-child{font-size:.7rem;font-weight:500;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dm-card-body p:nth-child(2){font-size:.6rem;color:#999;}
+.dm-card-body .dm-meta{display:flex;justify-content:space-between;margin-top:5px;}
+.dm-card-body .dm-meta span{font-size:.65rem;}
+.dm-card-body .dm-meta .dp{color:#6c5ce7;font-weight:600;}
+.dm-card-body .dm-meta .dl{color:#ff4757;}
+
+/* Guide box */
+.guide-box{background:var(--secondary-bg);border-left:4px solid var(--accent);padding:22px 24px;border-radius:0 8px 8px 0;margin-top:18px;}
+.guide-box h3{margin-bottom:12px;font-size:1.1rem;color:var(--primary-text);}
+.guide-box ol,.guide-box ul{padding-left:20px;}
+.guide-box li{margin-bottom:8px;font-size:.92rem;color:#444;line-height:1.75;}
+.hl{background:var(--highlight);padding:2px 6px;border-radius:4px;font-weight:600;font-size:.85rem;}
+
+/* Promo block */
+.promo-block{background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;padding:28px 30px;border-radius:12px;margin-bottom:44px;}
+.promo-block h2{color:#fff;margin-bottom:10px;font-size:1.5rem;}
+.promo-block p{font-size:.95rem;opacity:.92;margin-bottom:0;line-height:1.8;}
+
+/* ===== CHAT WIDGET ===== */
+.chat-widget{
+  position:fixed;bottom:24px;right:24px;z-index:900;
+}
+.chat-toggle{
+  width:58px;height:58px;border-radius:50%;background:var(--accent);color:#fff;
+  border:none;box-shadow:0 6px 24px rgba(108,92,231,.4);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.3s;
+}
+.chat-toggle:hover{transform:scale(1.08);box-shadow:0 8px 30px rgba(108,92,231,.5);}
+.chat-toggle .material-symbols-outlined{font-size:28px;}
+.chat-toggle .badge{
+  position:absolute;top:-2px;right:-2px;width:18px;height:18px;
+  background:#ff4757;border-radius:50%;font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;border:2px solid #fff;
+}
+
+.chat-window{
+  position:absolute;bottom:70px;right:0;width:400px;height:540px;
+  background:#fff;border-radius:16px;box-shadow:0 16px 50px rgba(0,0,0,.18);
+  border:1px solid var(--border);display:flex;flex-direction:column;
+  opacity:0;pointer-events:none;transform:translateY(12px) scale(.96);
+  transition:.3s;overflow:hidden;
+}
+.chat-window.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1);}
+@media(max-width:480px){.chat-window{width:calc(100vw - 32px);right:-8px;height:480px;}}
+
+.chat-head{
+  background:var(--accent);padding:14px 18px;display:flex;align-items:center;gap:10px;
+  flex-shrink:0;
+}
+.chat-head img{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.2);}
+.chat-head-info h4{font-size:.9rem;font-weight:600;color:#fff;}
+.chat-head-info p{font-size:.7rem;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:4px;}
+.chat-head-info .dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.chat-head-close{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.8);cursor:pointer;font-size:22px;}
+
+.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+.chat-messages::-webkit-scrollbar{width:4px;}
+.chat-messages::-webkit-scrollbar-thumb{background:#ddd;border-radius:10px;}
+
+.cmsg{display:flex;gap:8px;max-width:88%;animation:cmIn .3s ease;}
+.cmsg.user{flex-direction:row-reverse;margin-left:auto;}
+@keyframes cmIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.cmsg-av{
+  width:28px;height:28px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.cmsg.ai .cmsg-av{background:#f0eeff;color:var(--accent);}
+.cmsg.user .cmsg-av{background:var(--accent);color:#fff;}
+.cmsg-bubble{
+  padding:10px 14px;border-radius:14px;font-size:.82rem;line-height:1.7;
+}
+.cmsg.ai .cmsg-bubble{background:#f8f9fa;border:1px solid #eee;color:#2d2d2d;border-top-left-radius:4px;}
+.cmsg.user .cmsg-bubble{background:var(--accent);color:#fff;border-top-right-radius:4px;}
+.cmsg.ai .cmsg-bubble strong{font-weight:600;color:#1a1a2e;}
+.cmsg.ai .cmsg-bubble ul,.cmsg.ai .cmsg-bubble ol{margin:4px 0;padding-left:18px;}
+.cmsg.ai .cmsg-bubble li{margin-bottom:3px;}
+.cmsg.ai .cmsg-bubble p{margin-bottom:6px;}
+.cmsg.ai .cmsg-bubble p:last-child{margin-bottom:0;}
+.cmsg.ai .cmsg-bubble a{color:var(--accent);text-decoration:underline;}
+.cmsg.ai .cmsg-bubble code{background:#eee;padding:1px 5px;border-radius:3px;font-size:.78rem;}
+
+.cmsg-error .cmsg-bubble{background:#fff5f5;border:1px solid #fecaca;color:#991b1b;}
+
+.typing-dots{display:flex;gap:4px;padding:6px 2px;align-items:center;}
+.tdot{width:6px;height:6px;border-radius:50%;background:#bbb;animation:tbounce .6s ease infinite;}
+.tdot:nth-child(2){animation-delay:.15s;}
+.tdot:nth-child(3){animation-delay:.3s;}
+@keyframes tbounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-5px);opacity:1}}
+
+.chat-welcome{text-align:center;padding:20px 10px 10px;}
+.chat-welcome-icon{width:44px;height:44px;border-radius:14px;background:#f0eeff;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+.chat-welcome-icon .material-symbols-outlined{font-size:22px;color:var(--accent);}
+.chat-welcome h4{font-size:.88rem;font-weight:600;color:#1a1a2e;margin-bottom:4px;}
+.chat-welcome p{font-size:.75rem;color:#999;margin-bottom:12px;line-height:1.6;}
+.chat-chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.chat-chip{
+  padding:5px 11px;background:#f8f9fa;border:1px solid #eee;border-radius:50px;
+  font-size:.7rem;color:#555;cursor:pointer;transition:.2s;font-weight:500;
+}
+.chat-chip:hover{border-color:var(--accent);color:var(--accent);background:#f9f8ff;}
+
+.chat-input-bar{
+  padding:12px;border-top:1px solid #eee;display:flex;gap:8px;align-items:center;flex-shrink:0;background:#fff;
+}
+.chat-input-bar input{
+  flex:1;padding:9px 14px;border:1.5px solid #eee;border-radius:10px;font-size:.82rem;
+  outline:none;font-family:inherit;color:#2d2d2d;background:#f8f9fa;transition:.2s;
+}
+.chat-input-bar input:focus{border-color:var(--accent);background:#fff;}
+.chat-input-bar input::placeholder{color:#bbb;}
+.chat-send{
+  width:36px;height:36px;border-radius:10px;background:var(--accent);color:#fff;
+  border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  transition:.2s;flex-shrink:0;
+}
+.chat-send:hover{background:var(--accent-hover);}
+.chat-send:disabled{background:#ddd;cursor:not-allowed;}
+.chat-send .material-symbols-outlined{font-size:18px;}
+
+/* API Modal */
+.modal-overlay{
+  position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.45);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:.25s;
+}
+.modal-overlay.show{opacity:1;pointer-events:all;}
+.modal-box{
+  background:#fff;border-radius:14px;padding:28px 26px;max-width:420px;width:100%;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);transform:translateY(16px);transition:.3s;
+}
+.modal-overlay.show .modal-box{transform:translateY(0);}
+.modal-box h3{font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:6px;}
+.modal-box>p{font-size:.82rem;color:#888;margin-bottom:18px;line-height:1.7;}
+.modal-box label{font-size:.78rem;font-weight:600;color:#555;display:block;margin-bottom:5px;}
+.modal-box input{
+  width:100%;padding:10px 12px;border:1.5px solid #ddd;border-radius:8px;
+  font-size:.85rem;outline:none;transition:.2s;font-family:inherit;
+}
+.modal-box input:focus{border-color:var(--accent);}
+.modal-box .hint{font-size:.72rem;color:#aaa;margin-top:5px;line-height:1.6;}
+.modal-btns{display:flex;gap:8px;margin-top:18px;}
+.modal-btns button{flex:1;padding:10px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:.2s;}
+.mbtn-c{background:#f5f5f5;color:#666;}.mbtn-c:hover{background:#eee;}
+.mbtn-s{background:var(--accent);color:#fff;}.mbtn-s:hover{background:var(--accent-hover);}
+
+/* Sidebar */
+.sidebar{display:flex;flex-direction:column;gap:24px;}
+.sb-card{
+  background:var(--primary-bg);padding:20px;border-radius:12px;
+  box-shadow:var(--shadow);border:1px solid var(--border);
+}
+.sb-card h4{font-size:1rem;font-weight:600;color:var(--primary-text);margin-bottom:14px;}
+.sb-card p{font-size:.85rem;color:var(--secondary-text);margin-bottom:12px;line-height:1.7;}
+.sb-links{list-style:none;}
+.sb-links li{padding:9px 0;border-bottom:1px solid #f0f0f0;}
+.sb-links li:last-child{border:none;}
+.sb-links a{font-size:.88rem;color:var(--secondary-text);display:flex;align-items:center;gap:8px;transition:.2s;}
+.sb-links a:hover{color:var(--accent);}
+.sb-links .material-symbols-outlined{font-size:18px;color:var(--accent);}
+
+.sb-cta{
+  background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;padding:22px;
+  border-radius:12px;text-align:center;border:none;box-shadow:var(--shadow);
+}
+.sb-cta h4{color:#fff;font-size:1rem;margin-bottom:8px;}
+.sb-cta p{color:rgba(255,255,255,.85);font-size:.82rem;margin-bottom:14px;}
+.sb-cta a{
+  display:inline-block;padding:9px 24px;background:#fff;color:var(--accent);
+  border-radius:8px;font-size:.82rem;font-weight:600;transition:.2s;
+}
+.sb-cta a:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.15);}
+
+/* TOC */
+.toc{background:var(--primary-bg);padding:22px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.toc h4{font-size:.95rem;font-weight:600;margin-bottom:12px;color:var(--primary-text);}
+.toc ol{padding-left:20px;counter-reset:toc;}
+.toc li{margin-bottom:8px;counter-increment:toc;font-size:.84rem;}
+.toc li::before{content:counter(toc) ".";font-weight:600;color:var(--accent);margin-right:6px;}
+.toc a{color:var(--secondary-text);transition:.2s;}
+.toc a:hover{color:var(--accent);}
+
+footer{background:#2d3436;color:#b2bec3;padding:36px 20px;text-align:center;margin-top:40px;}
+footer .logo{margin-bottom:14px;justify-content:center;color:#fff;}
+footer p{font-size:.82rem;}
+
+/* Scroll to top */
+.scroll-top{
+  position:fixed;bottom:24px;left:24px;z-index:90;width:40px;height:40px;
+  border-radius:50%;background:#fff;border:1px solid var(--border);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  box-shadow:var(--shadow);opacity:0;transition:.3s;pointer-events:none;
+}
+.scroll-top.show{opacity:1;pointer-events:all;}
+.scroll-top:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+</style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="header-container">
-            <div class="logo">Art<span>Kart</span></div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Categories</a>
-                <a href="#" style="color: var(--accent-color); font-weight: 700;">Blog</a>
-                <a href="#">Contact</a>
-            </nav>
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <a href="home.html" class="logo"><img src="icons/ArtKart.png" alt="ArtKart"> Art<span>Kart</span></a>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Guide</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Page -->
+<div class="page-wrapper">
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <h1 class="blog-title">The Complete ArtKart Guide: Buy, Sell & Explore Original Art</h1>
+    <div class="blog-meta">Written by ArtKart Team &nbsp;|&nbsp; Last Updated: March 2026 &nbsp;|&nbsp; Reading Time: 12 mins</div>
+
+    <p class="blog-intro">
+      ArtKart is India's growing online art marketplace where real artists sell original paintings, sketches, digital art, and handmade creations directly to collectors and art lovers. This comprehensive guide covers every feature of the platform — from creating your account and browsing artworks to uploading your own art and managing orders. Whether you're a first-time buyer or an experienced artist looking to sell, this page has everything you need.
+    </p>
+
+    <!-- Section 1 -->
+    <div class="feature-block" id="s1">
+      <h2>1. What is ArtKart?</h2>
+      <p class="feature-desc">
+        ArtKart <a href="https://art-kart.netlify.app">(https://art-kart.netlify.app)</a> is a modern, mobile-first art marketplace designed specifically for the Indian art community. Unlike generic e-commerce platforms, ArtKart is built from the ground up to serve the unique needs of artists and art buyers. Every artwork listed on the platform is an original creation uploaded directly by the artist — there are no mass-produced prints, no dropshipping, and no middlemen taking large commissions.
+      </p>
+      <p class="feature-desc">
+        The platform supports multiple art categories including oil paintings, acrylic works, watercolor pieces, pencil and charcoal sketches, digital illustrations, and traditional Indian art forms like Warli and Madhubani. Artists can create detailed profile pages that serve as their online portfolio, while buyers get access to a curated feed of authentic artwork with transparent pricing and secure delivery across India.
+      </p>
+      <p class="feature-desc">
+        ArtKart operates on a simple principle: artists should keep control of their work and their earnings, and buyers should have confidence in what they're purchasing. The platform verifies artist identities during registration, reviews listings for quality, and provides a structured support system for any issues related to orders, delivery, or refunds.
+      </p>
+
+      <!-- Phone mockup: Home screen -->
+      <div class="screenshot-frame">
+        <div class="screenshot-bar">
+          <div class="screenshot-dot r"></div><div class="screenshot-dot y"></div><div class="screenshot-dot g"></div>
+          <div class="screenshot-url">art-kart.netlify.app/home.html</div>
         </div>
-    </header>
-
-    <!-- MAIN LAYOUT -->
-    <div class="page-wrapper">
-        
-        <!-- LEFT SIDE: MAIN BLOG CONTENT -->
-        <main class="main-content">
-            
-            <h1 class="blog-title">Mastering the Art of Shopping: The Complete Art-Kart User Guide</h1>
-            <div class="blog-meta">Written by The Art-Kart Team | Last Updated: October 2023 | Reading Time: 8 mins</div>
-
-            <p class="blog-intro">
-                Welcome to the definitive guide for <strong>Art-Kart</strong>. We built this platform with a singular vision: to make buying art supplies as inspiring as creating art itself. Whether you are a professional illustrator, a hobbyist painter, or a parent shopping for school supplies, this guide will walk you through every feature of our platform to ensure you get the most out of your experience.
-            </p>
-
-            <!-- FEATURE 1: NAVIGATION -->
-            <div class="feature-block">
-                <h2>1. Intelligent Navigation & Search</h2>
-                <p class="feature-description">
-                    The backbone of Art-Kart is our robust search and navigation system. We understand that artists need specific tools, and generic search results just don't cut it. Our system is categorized by medium (Watercolor, Oil, Acrylic) and tool type (Brushes, Canvases, Easels).
-                </p>
-                
-                <!-- Image Explanation -->
-                <div class="img-placeholder">
-                    <div class="ui-mockup">
-                        <div style="background: #eee; padding: 10px; width: 100%; margin-bottom: 10px; border-radius: 4px; display: flex; align-items: center;">
-                            <div style="background: #ddd; width: 20px; height: 20px; margin-right: 10px;"></div>
-                            <div style="background: white; flex-grow: 1; height: 20px; border: 1px solid #ccc; border-radius: 4px;"></div>
-                        </div>
-                        <div style="display: flex; gap: 10px; width: 100%;">
-                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">Category</div>
-                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">Deals</div>
-                            <div style="background: var(--accent-color); color: white; padding: 10px; flex: 1; text-align: center; border-radius: 4px; font-size: 0.8rem;">New</div>
-                        </div>
-                        <span>Fig 1. The Navigation Bar allows quick access to all categories.</span>
-                    </div>
+        <div class="screenshot-body" style="display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div class="phone-mockup">
+            <div class="phone-bar"><span>9:41</span></div>
+            <div class="phone-content">
+              <div class="phone-header">
+                <img src="icons/ArtKart.png" alt="">
+                <span>ArtKart</span>
+              </div>
+              <div class="phone-quick">
+                <div class="phone-quick-item">
+                  <span class="material-symbols-outlined">add_circle</span>
+                  <span>Upload</span>
                 </div>
-
-                <div class="guide-box">
-                    <h3>How to use the Smart Search:</h3>
-                    <ol>
-                        <li><strong>Keyword Search:</strong> Type exactly what you need (e.g., "Hog Hair Brush #6") into the search bar. Our predictive text will suggest popular items.</li>
-                        <li><strong>Category Browsing:</strong> Hover over the "Shop" menu to see a dropdown of all categories. This is perfect if you are browsing for inspiration.</li>
-                        <li><strong>Brand Filter:</strong> Looking for a specific brand like Faber-Castell or Winsor & Newton? Use the "Brand" filter in the sidebar on the shop page.</li>
-                    </ol>
+                <div class="phone-quick-item">
+                  <span class="material-symbols-outlined">search</span>
+                  <span>Explore</span>
                 </div>
-            </div>
-
-            <!-- FEATURE 2: PRODUCT PAGE -->
-            <div class="feature-block">
-                <h2>2. Detailed Product Visualization</h2>
-                <p class="feature-description">
-                    When buying art supplies online, details matter. You need to know the pigment load, the brush stiffness, and the paper grain. Our product pages are designed to give you a "in-store" feeling with high-resolution zoom features and color-accurate swatches.
-                </p>
-
-                <!-- Image Explanation -->
-                <div class="img-placeholder" style="background: #fdfdfd;">
-                    <div class="ui-mockup" style="flex-direction: row; align-items: flex-start; text-align: left;">
-                        <div style="width: 40%; height: 150px; background: #eee; margin-right: 20px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">Image Zoom</div>
-                        <div style="flex-grow: 1;">
-                            <div style="height: 20px; width: 50%; background: #333; margin-bottom: 10px;"></div>
-                            <div style="height: 15px; width: 30%; background: var(--accent-color); margin-bottom: 10px;"></div>
-                            <div style="height: 50px; background: #f0f0f0; margin-bottom: 10px;"></div>
-                            <div style="background: var(--highlight-color); color: white; padding: 5px 10px; display: inline-block; border-radius: 4px; font-size: 0.8rem;">Add to Cart</div>
-                        </div>
-                        <span>Fig 2. Product Page Layout focusing on high-res imagery and specs.</span>
-                    </div>
+                <div class="phone-quick-item">
+                  <span class="material-symbols-outlined">info</span>
+                  <span>About</span>
                 </div>
-
-                <div class="guide-box">
-                    <h3>Using the Product Page Tools:</h3>
-                    <ul>
-                        <li><strong>Image Zoom:</strong> Hover over the main product image to see a magnified view. This helps you see the texture of papers or canvas weave.</li>
-                        <li><strong>Color Swatches:</strong> For paints and markers, click the "View Colors" tab to see a digital swatch chart.</li>
-                        <li><strong>Reviews:</strong> Scroll down to read reviews from other artists. Look for the <span class="highlight">Verified Purchase</span> badge for authentic feedback.</li>
-                    </ul>
-                </div>
+              </div>
+              <p style="padding:4px 12px 8px;font-size:.65rem;color:#888;font-weight:500;">Most Liked</p>
+              <div class="phone-grid">
+                <div class="phone-card"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&q=60" alt=""><div class="phone-card-body"><p>Sunset Dreams</p><p>by Priya</p><div class="phone-meta"><span class="pp">₹2,500</span><span class="pl">❤ 42</span></div></div></div>
+                <div class="phone-card"><img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=200&q=60" alt=""><div class="phone-card-body"><p>Abstract Flow</p><p>by Rahul</p><div class="phone-meta"><span class="pp">₹3,200</span><span class="pl">❤ 38</span></div></div></div>
+                <div class="phone-card"><img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=200&q=60" alt=""><div class="phone-card-body"><p>Mountain View</p><p>by Ankit</p><div class="phone-meta"><span class="pp">₹1,800</span><span class="pl">❤ 29</span></div></div></div>
+                <div class="phone-card"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=60" alt=""><div class="phone-card-body"><p>Color Burst</p><p>by Meera</p><div class="phone-meta"><span class="pp">₹4,000</span><span class="pl">❤ 55</span></div></div></div>
+              </div>
+              <div class="phone-bottom-nav">
+                <div class="pnav act"><span class="material-symbols-outlined">home</span><span>Home</span></div>
+                <div class="pnav"><span class="material-symbols-outlined">explore</span><span>Explore</span></div>
+                <div class="pnav"><span class="material-symbols-outlined">person</span><span>Profile</span></div>
+              </div>
             </div>
-
-            <!-- FEATURE 3: CHECKOUT -->
-            <div class="feature-block">
-                <h2>3. Seamless Checkout & Payment</h2>
-                <p class="feature-description">
-                    We have streamlined our checkout process to reduce friction. You don't need to create an account to buy, though creating one saves your history. We support secure payments via Credit Card, PayPal, and UPI.
-                </p>
-
-                <div class="guide-box">
-                    <h3>Step-by-Step Checkout:</h3>
-                    <ol>
-                        <li><strong>The Cart:</strong> Click the Cart Icon in the top right. Here you can adjust quantities. If you have a discount code, enter it in the "Promo Code" box.</li>
-                        <li><strong>Shipping:</strong> Enter your address. Our system auto-detects your location for faster shipping estimates.</li>
-                        <li><strong>Payment:</strong> Select your payment method. All transactions are SSL encrypted for your safety.</li>
-                        <li><strong>Confirmation:</strong> You will receive an email with your Order ID and a tracking link within 24 hours.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- PROMOTIONAL BLOCK FOR ART-KART -->
-            <div class="feature-block" style="background: var(--accent-color); color: white; padding: 30px; border-radius: 12px;">
-                <h2 style="color: white; border: none;">Why Choose Art-Kart?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 0;">
-                    At Art-Kart, we aren't just selling supplies; we are fueling creativity. With our <strong>Price Match Guarantee</strong> and <strong>30-Day Returns</strong>, you can shop with confidence. Join our community today and get <strong>10% off</strong> your first order by subscribing to our newsletter at the bottom of the page!
-                </p>
-            </div>
-
-        </main>
-
-        <!-- RIGHT SIDE: SIDEBAR -->
-        <aside class="sidebar">
-            
-            <!-- ADVERTISEMENT SECTION -->
-            <div class="ad-card">
-                <h4>Grow Your Own Audience</h4>
-                <p>Are you a creator looking to monetize your content? We recommend Collaborator.pro for connecting with top brands and growing your influence.</p>
-                
-                <!-- INSERTED AD CODE -->
-                <a href='https://collaborator.pro/signup?code=gNoXtf' title='Collaborator' target='_blank'>
-                    <img src='https://collaborator.pro/images/referral/promo/en/6.png' width='336' height='280' alt='Collaborator' style="max-width: 100%; height: auto; border-radius: 6px;"/>
-                </a>
-                <p style="font-size: 0.8rem; margin-top: 10px; color: #999;">Sponsored</p>
-            </div>
-
-            <!-- ADDITIONAL SIDEBAR WIDGET -->
-            <div class="ad-card">
-                <h4>Quick Links</h4>
-                <ul style="list-style: none; text-align: left;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Oil Paints Collection</a></li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Sketchbooks & Pads</a></li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="#">Easels & Furniture</a></li>
-                    <li style="padding: 10px 0;"><a href="#">Gift Cards</a></li>
-                </ul>
-            </div>
-
-        </aside>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:#aaa;text-align:center;margin-top:-12px;margin-bottom:20px;">Fig 1. ArtKart Home Screen — Quick actions and most liked artworks feed</p>
     </div>
 
-    <!-- FOOTER -->
-    <footer style="background: #2d3436; color: #b2bec3; padding: 40px; text-align: center; margin-top: 40px;">
-        <div class="logo" style="margin-bottom: 20px; color: white;">Art<span style="color: var(--accent-color);">Kart</span></div>
-        <p>© 2023 Art-Kart. All Rights Reserved. Designed for Artists.</p>
-    </footer>
+    <!-- Section 2 -->
+    <div class="feature-block" id="s2">
+      <h2>2. Creating Your Account</h2>
+      <p class="feature-desc">
+        Getting started on ArtKart takes less than a minute. You can register as a buyer (art lover) or as an artist (seller). Both account types are free to create. The registration process collects your basic information — name, email, and a password. If you're signing up as an artist, you'll also set up your artist profile with a bio and display picture, which becomes your public portfolio page on the platform.
+      </p>
+      <p class="feature-desc">
+        Your account gives you access to several features: liking and saving artworks to your wishlist, following your favorite artists, placing orders with secure payments, and (if you're an artist) uploading and managing your artwork listings. All your activity — orders, likes, uploads — is accessible from your profile page.
+      </p>
+      <div class="guide-box">
+        <h3>Step-by-Step Registration:</h3>
+        <ol>
+          <li>Go to the <span class="hl">Sign Up</span> page from the header button or direct link (register.html).</li>
+          <li>Enter your full name, email address, and create a strong password.</li>
+          <li>If registering as an artist, fill in your artist name, a short bio about your art style, and upload a profile picture.</li>
+          <li>Click <span class="hl">Create Account</span>. You'll be signed in automatically.</li>
+          <li>You'll land on the Home page where you can immediately start browsing artworks or, if you're an artist, head to the Upload page to list your first piece.</li>
+        </ol>
+      </div>
+    </div>
 
+    <!-- Section 3 -->
+    <div class="feature-block" id="s3">
+      <h2>3. Browsing & Exploring Artworks</h2>
+      <p class="feature-desc">
+        The Explore page is where you discover art on ArtKart. It displays all uploaded artworks in a clean, image-first grid layout. Each artwork card shows the piece's image, title, artist name, price in Indian Rupees, and a like count. You can scroll through the entire collection or use the search functionality to find specific pieces by title, artist name, or style.
+      </p>
+      <p class="feature-desc">
+        The Home page also features a "Most Liked" section that surfaces the most popular artworks based on community engagement. This is a great starting point if you're new to the platform and want to see what other collectors are appreciating. Tapping on any artwork card takes you to the detailed artwork page where you can see a larger image, full description, and the artist's profile link.
+      </p>
+
+      <!-- Desktop mockup -->
+      <div class="screenshot-frame">
+        <div class="screenshot-bar">
+          <div class="screenshot-dot r"></div><div class="screenshot-dot y"></div><div class="screenshot-dot g"></div>
+          <div class="screenshot-url">art-kart.netlify.app/explore.html</div>
+        </div>
+        <div class="screenshot-body desktop-mockup" style="padding:0;">
+          <div class="dm-header">
+            <img src="icons/ArtKart.png" alt="">
+            <h3>ArtKart</h3>
+            <div class="dm-btns">
+              <span>Login</span>
+              <span style="background:#6c5ce7;color:#fff;border-color:#6c5ce7;">Sign Up</span>
+            </div>
+          </div>
+          <div class="dm-grid">
+            <div class="dm-card"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=60" alt=""><div class="dm-card-body"><p>Evening Calm</p><p>by Sneha</p><div class="dm-meta"><span class="dp">₹5,200</span><span class="dl">❤ 67</span></div></div></div>
+            <div class="dm-card"><img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=200&q=60" alt=""><div class="dm-card-body"><p>Floral Grace</p><p>by Kavita</p><div class="dm-meta"><span class="dp">₹3,800</span><span class="dl">❤ 51</span></div></div></div>
+            <div class="dm-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&q=60" alt=""><div class="dm-card-body"><p>Ocean Waves</p><p>by Dev</p><div class="dm-meta"><span class="dp">₹6,100</span><span class="dl">❤ 73</span></div></div></div>
+            <div class="dm-card"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&q=60" alt=""><div class="dm-card-body"><p>Forest Trail</p><p>by Amit</p><div class="dm-meta"><span class="dp">₹2,900</span><span class="dl">❤ 45</span></div></div></div>
+          </div>
+          <p style="text-align:center;font-size:.7rem;color:#aaa;padding:8px;">Showing all artworks from the ArtKart collection</p>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:#aaa;text-align:center;margin-top:-12px;margin-bottom:20px;">Fig 2. ArtKart Explore Page — Full artwork grid with pricing and engagement metrics</p>
+
+      <div class="guide-box">
+        <h3>How to Find the Right Artwork:</h3>
+        <ul>
+          <li><strong>Start with Most Liked:</strong> The Home page's "Most Liked" section shows community-favorite pieces. This is great for discovering quality art.</li>
+          <li><strong>Browse Explore:</strong> Visit the Explore page to see all artworks. Scroll through the grid and tap anything that catches your eye.</li>
+          <li><strong>Check Artist Profiles:</strong> Click on the artist's name to visit their profile page. You'll see their full portfolio and can follow them for updates.</li>
+          <li><strong>Use the Like Button:</strong> Tap the heart icon on any artwork to like it. Liked artworks help surface popular content for other buyers.</li>
+          <li><strong>Review Details:</strong> Always open the artwork detail page before purchasing. Check the dimensions, medium, and any description the artist has provided.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="feature-block" id="s4">
+      <h2>4. Buying Artwork on ArtKart</h2>
+      <p class="feature-desc">
+        Purchasing original art on ArtKart is a straightforward process designed to be transparent and secure. When you find an artwork you want, you click through to its detail page, review the information provided by the artist (including price, medium, dimensions, and any additional notes), and proceed to place your order. The platform supports multiple Indian payment methods to make the process convenient.
+      </p>
+      <p class="feature-desc">
+        Once your order is placed, the artist receives a notification and begins preparing your artwork for shipment. Since every piece is original and often created on-demand or carefully stored, the artist handles the packaging personally to ensure it arrives in perfect condition. You receive tracking information once the artwork has been shipped, and delivery typically takes 5-10 business days depending on your location within India.
+      </p>
+      <div class="guide-box">
+        <h3>Step-by-Step Buying Process:</h3>
+        <ol>
+          <li><strong>Find Your Artwork:</strong> Browse the Home or Explore page and tap on an artwork card to view its full details.</li>
+          <li><strong>Review the Details:</strong> On the artwork page, check the image carefully, read the title, artist name, price, and any description about the medium or dimensions.</li>
+          <li><strong>Check the Artist:</strong> Tap the artist's name to view their profile. Look at their other works and bio to understand their style and credibility.</li>
+          <li><strong>Place the Order:</strong> Select "Buy Now" or "Add to Cart" on the artwork page. Choose your payment method — UPI (Google Pay, PhonePe, Paytm), credit/debit card, or net banking.</li>
+          <li><strong>Complete Payment:</strong> All transactions are processed through secure, encrypted payment gateways. You'll receive an order confirmation.</li>
+          <li><strong>Track Delivery:</strong> The artist packages and ships your artwork with tracking. Monitor your order status and expect delivery within 5-10 business days.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="feature-block" id="s5">
+      <h2>5. Uploading & Selling Your Art</h2>
+      <p class="feature-desc">
+        If you're an artist, ArtKart gives you a free platform to reach buyers across India without the need for a personal website, social media marketing, or gallery representation. The upload process is designed to be quick — you add a photo of your artwork, fill in the details, set your price, and publish. There are no approval wait times or follower count requirements. If you create art, you can sell it on ArtKart.
+      </p>
+      <p class="feature-desc">
+        Your artist profile serves as your portfolio page. When buyers click on your name from any artwork, they see your full collection, bio, and profile picture. This means every artwork you upload contributes to building your visible presence on the platform. Over time, as you accumulate likes and sales, your profile becomes a powerful showcase of your artistic journey.
+      </p>
+      <div class="guide-box">
+        <h3>How to Upload Your First Artwork:</h3>
+        <ol>
+          <li>Make sure you're logged into your artist account.</li>
+          <li>Navigate to the <span class="hl">Upload</span> page using the quick action button on Home or your profile menu.</li>
+          <li>Click the image upload area and select a high-quality photo of your artwork. Use good lighting and a clean background for the best presentation.</li>
+          <li>Enter the <span class="hl">Title</span> (e.g., "Sunset Over Jaipur"), your <span class="hl">Artist Name</span>, and a <span class="hl">Price</span> in Rupees.</li>
+          <li>Add a description mentioning the medium (oil, acrylic, watercolor, pencil, etc.), dimensions, and any story behind the piece.</li>
+          <li>Click <span class="hl">Upload</span>. Your artwork is now live on the Explore page and visible to all ArtKart users.</li>
+          <li>Share the link to your artwork or profile on social media to drive more views and potential buyers.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="feature-block" id="s6">
+      <h2>6. Payments, Delivery & Refunds</h2>
+      <p class="feature-desc">
+        ArtKart supports a wide range of Indian payment methods to ensure every buyer can pay comfortably. UPI payments through Google Pay, PhonePe, and Paytm are the most popular option due to their instant confirmation. Credit and debit cards (Visa, Mastercard, RuPay) and net banking are also supported. All payment processing is handled through encrypted, secure gateways — your financial information is never stored on ArtKart's servers.
+      </p>
+      <p class="feature-desc">
+        For delivery, each artist is responsible for carefully packaging the artwork to prevent damage during transit. Paintings are typically wrapped in protective layers, rolled or flat-packed depending on size, and shipped through tracked courier services. You receive a tracking link once the shipment is dispatched. Standard delivery takes 5-10 business days across India.
+      </p>
+      <p class="feature-desc">
+        If the artwork you receive differs significantly from what was listed (wrong color, damaged, different piece entirely), ArtKart's refund policy covers you. Contact the support team through the Contact page within 48 hours of delivery with photographs of the received artwork and the issue. The team will review your case and coordinate with the artist for a resolution, which may include a replacement or full refund.
+      </p>
+      <div class="guide-box">
+        <h3>Payment & Refund Summary:</h3>
+        <ul>
+          <li><strong>Accepted Methods:</strong> UPI (GPay, PhonePe, Paytm), Credit/Debit Cards, Net Banking, Wallets</li>
+          <li><strong>Security:</strong> All transactions SSL-encrypted through trusted payment gateways</li>
+          <li><strong>Delivery Time:</strong> 5-10 business days across India with tracking</li>
+          <li><strong>Packaging:</strong> Done by the artist with protective materials</li>
+          <li><strong>Refund Window:</strong> Contact support within 48 hours of delivery with photos</li>
+          <li><strong>Refund Coverage:</strong> Significant discrepancies between listing and received artwork</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="feature-block" id="s7">
+      <h2>7. Artist Profiles & Portfolios</h2>
+      <p class="feature-desc">
+        Every artist on ArtKart gets a dedicated profile page that functions as their online portfolio. This page displays the artist's name, profile picture, bio, and a complete grid of all their uploaded artworks. It's a powerful tool for building your brand as an artist — you can share your ArtKart profile link anywhere (Instagram bio, WhatsApp status, LinkedIn) and potential buyers can browse your entire collection in one place.
+      </p>
+      <p class="feature-desc">
+        The profile page also shows your total number of artworks, giving visitors a sense of your productivity and range. As you upload more pieces and receive likes, your profile naturally becomes more attractive to buyers. There's no algorithm hiding your work — every artwork you upload is immediately visible on the Explore page and on your profile, giving you equal opportunity regardless of your follower count or how long you've been on the platform.
+      </p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="feature-block" id="s8">
+      <h2>8. Categories of Art on ArtKart</h2>
+      <p class="feature-desc">
+        ArtKart hosts a diverse range of art forms. The primary categories include Paintings (oil, acrylic, watercolor, and mixed media works on canvas or paper), Sketches (pencil drawings, charcoal sketches, pen and ink illustrations), Digital Art (illustrations, concept art, and digital paintings offered as prints), and Handmade Art (traditional Indian art forms like Warli, Madhubani, and other folk and tribal art styles).
+      </p>
+      <p class="feature-desc">
+        Each category attracts a different type of buyer. Paintings tend to be the most popular for home decor and gifting. Sketches are often purchased by collectors who appreciate raw artistic skill. Digital art appeals to a younger, design-conscious audience. Handmade and traditional art forms have a dedicated following among buyers looking for culturally significant pieces. As an artist, understanding which category your work falls into helps you price it appropriately and write descriptions that attract the right audience.
+      </p>
+    </div>
+
+    <!-- Promo -->
+    <div class="promo-block">
+      <h2>Have More Questions? Ask Our AI Assistant</h2>
+      <p>Click the chat bubble in the bottom-right corner on the main page  to talk to ArtKart AI — it knows everything about the platform and can guide you through buying, selling, payments, refunds, and more in real time. Available 24/7, responds instantly.</p>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="feature-block" id="s9">
+      <h2>9. Tips for Artists Getting Started</h2>
+      <p class="feature-desc">
+        If you're new to selling art online, here are practical tips to make the most of ArtKart. First, invest time in photographing your artwork well. Use natural daylight, a clean background (a plain wall or white sheet works), and take multiple angles. The image is the first thing buyers see — a blurry or poorly lit photo will lose you sales regardless of how good the actual artwork is.
+      </p>
+      <p class="feature-desc">
+        Second, write meaningful titles and descriptions. Instead of "Painting 1," use something like "Golden Hour at Marine Drive — Oil on Canvas, 18x24 inches." Include the medium, dimensions, and a brief story about what inspired the piece. Buyers connect with stories, and detailed descriptions build trust.
+      </p>
+      <p class="feature-desc">
+        Third, price your work fairly. Research what similar artworks on ArtKart are priced at, consider your material costs and time invested, and set a price that reflects your skill level while remaining accessible. As you build a reputation and receive positive engagement, you can gradually increase your prices.
+      </p>
+      <p class="feature-desc">
+        Fourth, be consistent. Upload regularly — even one new piece per week keeps your profile active and gives returning visitors something new to see. Share your ArtKart profile link on your social media accounts, WhatsApp groups, and with friends and family. Every share is a potential sale.
+      </p>
+    </div>
+
+    <!-- Section 10 -->
+    <div class="feature-block" id="s10">
+      <h2>10. Safety, Trust & Community</h2>
+      <p class="feature-desc">
+        ArtKart takes trust seriously. Every artist goes through a registration process that verifies their identity. Artwork listings are reviewed to ensure they represent original creations. The platform does not allow mass-produced prints sold as originals, stolen artwork, or misleading descriptions. If you ever encounter a listing that seems inauthentic, you can report it through the Contact page and the team will investigate.
+      </p>
+      <p class="feature-desc">
+        For buyers, the combination of verified artists, secure payments, tracked delivery, and a clear refund policy creates a safe purchasing environment. For artists, the platform provides direct access to buyers without gallery commissions or platform fees eating into earnings. The community aspect — likes, artist profiles, and the ability to discover new talent — makes ArtKart more than just a marketplace; it's a growing ecosystem for Indian art.
+      </p>
+      <div class="guide-box">
+        <h3>Key Trust Features:</h3>
+        <ul>
+          <li><strong>Verified Artists:</strong> Identity verification during registration ensures real people behind every listing</li>
+          <li><strong>Original Artwork Only:</strong> No mass-produced prints or dropshipped items allowed on the platform</li>
+          <li><strong>Secure Payments:</strong> SSL-encrypted transactions through established payment gateways</li>
+          <li><strong>Tracked Delivery:</strong> Every shipment comes with tracking information for full visibility</li>
+          <li><strong>Refund Protection:</strong> 48-hour window to report issues with photo evidence for resolution</li>
+          <li><strong>Direct Communication:</strong> Buyers can reach artists and support directly for transparency</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="toc">
+      <h4>📑 Table of Contents</h4>
+      <ol>
+        <li><a href="#s1">What is ArtKart?</a></li>
+        <li><a href="#s2">Creating Your Account</a></li>
+        <li><a href="#s3">Browsing & Exploring</a></li>
+        <li><a href="#s4">Buying Artwork</a></li>
+        <li><a href="#s5">Uploading & Selling Art</a></li>
+        <li><a href="#s6">Payments & Delivery</a></li>
+        <li><a href="#s7">Artist Profiles</a></li>
+        <li><a href="#s8">Art Categories</a></li>
+        <li><a href="#s9">Tips for Artists</a></li>
+        <li><a href="#s10">Safety & Trust</a></li>
+      </ol>
+    </div>
+
+    <div class="sb-card">
+      <h4>Quick Links</h4>
+      <ul class="sb-links">
+        <li><a href="home.html"><span class="material-symbols-outlined">home</span> Home Page</a></li>
+        <li><a href="explore.html"><span class="material-symbols-outlined">explore</span> Explore Art</a></li>
+        <li><a href="register.html"><span class="material-symbols-outlined">person_add</span> Create Account</a></li>
+        <li><a href="login.html"><span class="material-symbols-outlined">login</span> Log In</a></li>
+        <li><a href="seller-profile.html"><span class="material-symbols-outlined">brush</span> Become an Artist</a></li>
+        <li><a href="about.html"><span class="material-symbols-outlined">info</span> About ArtKart</a></li>
+        <li><a href="contact.html"><span class="material-symbols-outlined">mail</span> Contact Support</a></li>
+        <li><a href="privacy-policy.html"><span class="material-symbols-outlined">privacy_tip</span> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="sb-cta">
+      <h4>🎨 Start Selling Today</h4>
+      <p>Free account, unlimited uploads, direct payments to your bank. No gallery commissions.</p>
+      <a href="register.html">Join ArtKart →</a>
+    </div>
+
+    <div class="sb-card">
+      <h4>Need Help?</h4>
+<p>
+  If you are having any issues regarding ArtKart, you can contact us at 
+  <a href="mailto:artkart.customercare@gmail.com">artkart.customercare@gmail.com</a> 
+  or visit our <a href="contact.html">Contact Page</a>.
+</p>
+
+<p style="font-size: 0.82rem; color: var(--accent); font-weight: 500;">
+  👆
+</p>
+    </div>
+
+  </aside>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="logo">
+    <img src="icons/ArtKart.png" alt="ArtKart" style="width:30px;height:30px;border-radius:6px;">
+    Art<span style="color:var(--accent)">Kart</span>
+  </div>
+  <p>© 2026 ArtKart. All rights reserved. Crafted for Art Lovers 🎨</p>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <span class="material-symbols-outlined" style="font-size:20px">keyboard_arrow_up</span>
+</button>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head">
+      <img src="icons/ArtKart.png" alt="">
+      <div class="chat-head-info">
+        <h4>ArtKart AI</h4>
+        <p><span class="dot"></span> Online — ArtKart only</p>
+      </div>
+      <button class="chat-head-close" onclick="toggleChat()"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-welcome" id="chatWelcome">
+        <div class="chat-welcome-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+        <h4>ArtKart AI Assistant</h4>
+        <p>I only answer questions about ArtKart. Ask me anything!</p>
+        <div class="chat-chips">
+          <div class="chat-chip" onclick="sendQuick('How do I buy artwork?')">Buy artwork</div>
+          <div class="chat-chip" onclick="sendQuick('How to upload art?')">Upload art</div>
+          <div class="chat-chip" onclick="sendQuick('Payment methods?')">Payments</div>
+          <div class="chat-chip" onclick="sendQuick('Delivery process?')">Delivery</div>
+          <div class="chat-chip" onclick="sendQuick('Refund policy?')">Refunds</div>
+          <div class="chat-chip" onclick="sendQuick('How to create account?')">Sign up</div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- API Key Modal -->
+
+<script>
+// ===== STATE =====
+
+// ===== CHAT UI =====
+
+
+function escHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function fmtAI(t){
+  let h=escHtml(t);
+  h=h.replace(/`([^`]+)`/g,'<code>$1</code>');
+  h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+  h=h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank">$1</a>');
+  h=h.replace(/^- (.+)$/gm,'<li>$1</li>');
+  h=h.replace(/(<li>.*<\/li>\n?)+/g,'<ul>$&</ul>');
+  h=h.replace(/^\d+\.\s(.+)$/gm,'<li>$1</li>');
+  h=h.replace(/\n\n/g,'</p><p>');h=h.replace(/\n/g,'<br>');
+  h='<p>'+h+'</p>';h=h.replace(/<p><\/p>/g,'');return h;
+}
+
+// ===== STREAM =====
+
+// ===== API MODAL =====
+
+// ===== SCROLL TO TOP =====
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('show',window.scrollY>400);});
+</script>
 </body>
 </html>
