@@ -158,8 +158,8 @@
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-    // State
-    const PAGE_SIZE = 12;
+    // --- State Management ---
+    const FETCH_LIMIT = 20; // Number of docs to pull per Firestore request
     let lastDoc = null;
     let isLoading = false;
     let hasMore = true;
@@ -174,14 +174,13 @@
     const searchInput = document.getElementById("searchInput");
     const chips = document.querySelectorAll(".chip");
 
-    // Auth change → full reset
+    // --- Authentication ---
     auth.onAuthStateChanged(user => {
       currentUserId = user ? user.uid : null;
-      console.log("User changed:", currentUserId ? "Logged in" : "Not logged in");
       resetAndReload();
     });
 
-    // Search + category
+    // --- Event Listeners ---
     searchInput.addEventListener("input", debounce(() => {
       searchTerm = searchInput.value.trim().toLowerCase();
       resetAndReload();
@@ -196,11 +195,14 @@
       });
     });
 
+    // --- Core Functions ---
+
     function resetAndReload() {
       grid.innerHTML = "";
       lastDoc = null;
       hasMore = true;
       loading.style.display = "block";
+      loading.innerHTML = "Loading artworks...";
       empty.style.display = "none";
       loadMoreArtworks();
     }
@@ -213,73 +215,86 @@
       };
     }
 
-    // Load artworks
     async function loadMoreArtworks() {
-      if (isLoading) return;
+      if (isLoading || !hasMore) return;
       isLoading = true;
 
       try {
         let query = db.collection("arts")
           .orderBy("createdAt", "desc")
-          .limit(PAGE_SIZE);
+          .limit(FETCH_LIMIT);
 
-        if (lastDoc) query = query.startAfter(lastDoc);
+        if (lastDoc) {
+          query = query.startAfter(lastDoc);
+        }
 
         const snap = await query.get();
 
-        loading.style.display = "none";
-
         if (snap.empty) {
           hasMore = false;
-          if (grid.children.length === 0) {
-            grid.style.display = "none";
-            empty.style.display = "block";
-          }
+          loading.style.display = "none";
+          if (grid.children.length === 0) empty.style.display = "block";
           return;
         }
 
+        loading.style.display = "none";
         grid.style.display = "grid";
+
+        let matchedInThisBatch = 0;
 
         snap.forEach(doc => {
           const art = doc.data();
           const artId = doc.id;
 
-          // Debug log
-          console.log("Artwork:", { id: artId, title: art.title, imageUrl: art.imageUrl });
-
-          // Client-side filter
+          // Filtering logic
           const title = (art.title || "").toLowerCase();
           const artist = (art.artistName || "").toLowerCase();
           const cat = (art.category || "").toLowerCase();
 
-          if (searchTerm && !title.includes(searchTerm) && !artist.includes(searchTerm)) return;
-          if (selectedCategory && cat !== selectedCategory.toLowerCase()) return;
+          const matchesSearch = !searchTerm || title.includes(searchTerm) || artist.includes(searchTerm);
+          const matchesCategory = !selectedCategory || cat === selectedCategory.toLowerCase();
 
-          // Like status
-          const isLiked = false; // Placeholder - implement if needed
-
-          const card = document.createElement("a");
-          card.href = `artwork.html?id=${artId}`;
-          card.className = "item-card";
-          card.innerHTML = `
-            <img class="item-img" src="${art.imageUrl || 'https://via.placeholder.com/300?text=Image'}" alt="${art.title || 'Artwork'}">
-            <div class="item-content">
-              <div class="item-title">${art.title || 'Untitled'}</div>
-              <div class="item-artist">by ${art.artistName || 'Unknown'}</div>
-              <div class="item-meta">
-                <span class="item-price">₹${(art.price || 0).toLocaleString()}</span>
-                <button class="like-btn">
-                  <span class="material-symbols-outlined">favorite</span>
-                  <span>${art.likeCount || 0}</span>
-                </button>
+          if (matchesSearch && matchesCategory) {
+            matchedInThisBatch++;
+            const card = document.createElement("a");
+            card.href = `artwork.html?id=${artId}`;
+            card.className = "item-card";
+            card.innerHTML = `
+              <img loading="lazy" class="item-img" 
+                src="${art.imageUrl || 'https://via.placeholder.com/300?text=Image'}" 
+                alt="${art.title || 'Artwork'}">
+              <div class="item-content">
+                <div class="item-title">${art.title || 'Untitled'}</div>
+                <div class="item-artist">by ${art.artistName || 'Unknown'}</div>
+                <div class="item-meta">
+                  <span class="item-price">₹${(art.price || 0).toLocaleString()}</span>
+                  <button class="like-btn">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span>${art.likeCount || 0}</span>
+                  </button>
+                </div>
               </div>
-            </div>
-          `;
-
-          grid.appendChild(card);
+            `;
+            grid.appendChild(card);
+          }
         });
 
+        // Update the reference point for the next fetch
         lastDoc = snap.docs[snap.docs.length - 1];
+
+        // If we received fewer items than requested, the DB is exhausted
+        if (snap.size < FETCH_LIMIT) {
+          hasMore = false;
+        }
+
+        /* Crucial Fix: If the filter hid all items in this batch, 
+           immediately trigger the next fetch so the user isn't stuck with a blank screen.
+        */
+        if (matchedInThisBatch === 0 && hasMore) {
+          isLoading = false;
+          return loadMoreArtworks();
+        }
+
       } catch (err) {
         console.error("Load error:", err);
         loading.innerHTML = "Failed to load artworks.";
@@ -288,25 +303,28 @@
       }
     }
 
-    // Initial load
-    loadMoreArtworks();
+    // --- Infinite Scroll Observer ---
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMore && !isLoading) {
+        loadMoreArtworks();
+      }
+    }, { threshold: 0.1 });
 
-    // Pull-to-refresh
+    observer.observe(sentinel);
+
+    // --- Pull-to-Refresh & Navigation ---
     let touchStartY = 0;
-    let pullDistance = 0;
-    const pullThreshold = 120;
-
     window.addEventListener("touchstart", e => {
       if (window.scrollY === 0) touchStartY = e.touches[0].clientY;
     }, { passive: true });
 
-    window.addEventListener("touchend", () => {
-      if (pullDistance >= pullThreshold) location.reload();
-      pullDistance = 0;
-      touchStartY = 0;
+    window.addEventListener("touchend", e => {
+      const touchEndY = e.changedTouches[0].clientY;
+      if (window.scrollY === 0 && touchEndY - touchStartY > 150) {
+        location.reload();
+      }
     }, { passive: true });
 
-    // Bottom nav
     document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', () => {
         const page = item.getAttribute('data-page');
@@ -315,5 +333,7 @@
       });
     });
   </script>
+
 </body>
 </html>
+ 
