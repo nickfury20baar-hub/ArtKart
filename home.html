@@ -71,9 +71,14 @@
     .item-price { color:#6c63ff; font-weight:500; }
     .item-likes { color:#ff4757; }
 
-    .loading { text-align:center; padding:60px 20px; color:#777; font-size:15px; }
+    .loading { text-align:center; padding:20px; color:#777; font-size:15px; }
+    .loading-spinner { display:inline-block; width:20px; height:20px; border:3px solid #f3f3f3; border-top:3px solid #6c63ff; border-radius:50%; animation:spin 1s linear infinite; margin-right:8px; }
+    @keyframes spin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); } }
     .empty { text-align:center; padding:80px 24px; color:#777; }
     .empty-icon { font-size:64px; color:#d0d0d0; margin-bottom:16px; }
+
+    #loadingMore { text-align:center; padding:20px; display:none; }
+    #endMessage { text-align:center; padding:20px; color:#999; font-size:14px; display:none; }
 
     footer { margin:40px 0 16px; text-align:center; font-size:12px; color:#888; }
 
@@ -89,8 +94,8 @@
     
     
     a {
-  margin-right: 20px; /* jitna space chahiye adjust karo */
-  text-decoration: none; /* optional, underline remove karne ke liye */
+  margin-right: 20px;
+  text-decoration: none;
 }
   </style>
 </head>
@@ -98,7 +103,7 @@
 
   <!-- Header -->
   <header>
-    <div class="logo"><img class="ArtKart-img" src="icons/ArtKart.png" alt="Logo"></div>
+    <div class="logo"><img class="ArtKart-img" src="https://art-kart.netlify.app/icons/ArtKart.png" alt="Logo"></div>
     <div>
     <h1>ArtKart</h1>
     </div>
@@ -121,14 +126,22 @@
   </div>
 
   <!-- Most Liked Section -->
-  <div class="section-title">Most Liked</div>
+  <div class="section-title"></div>
 
-  <div class="loading" id="loading">Loading top artworks...</div>
+  <div class="loading" id="loading">
+    <span class="loading-spinner"></span>
+    Loading artworks...
+  </div>
   <div class="items" id="itemsGrid" style="display:none;"></div>
+  <div id="loadingMore">
+    <span class="loading-spinner"></span>
+    Loading more artworks...
+  </div>
+  <div id="endMessage"><a href="explore.html" >Want to explore more artworks.<br>Click here</a></div>
   <div class="empty" id="emptyState" style="display:none;">
     <span class="material-symbols-outlined empty-icon">favorite</span>
-    <h3>No liked artworks yet</h3>
-    <p>Popular pieces will appear here once users start liking them.</p>
+    <h3>No artworks yet</h3>
+    <p>Artworks will appear here soon.</p>
   </div>
 
   <!-- Footer -->
@@ -176,51 +189,133 @@
 
     const grid = document.getElementById("itemsGrid");
     const loading = document.getElementById("loading");
+    const loadingMore = document.getElementById("loadingMore");
+    const endMessage = document.getElementById("endMessage");
     const empty = document.getElementById("emptyState");
 
-    // Load most liked artworks (top 8 for home page)
-    async function loadMostLiked() {
+    let lastDoc = null;
+    let isLoading = false;
+    let hasMoreData = true;
+    const itemsPerPage = 12;
+    const loadedArtIds = new Set(); // Track loaded art IDs to prevent duplicates
+
+    // Load initial artworks
+    async function loadInitialArts() {
       try {
+        isLoading = true;
         const snap = await db.collection("arts")
           .orderBy("likeCount", "desc")
-          .limit(8)
+          .limit(itemsPerPage)
           .get();
 
         loading.style.display = "none";
 
         if (snap.empty) {
           empty.style.display = "block";
+          isLoading = false;
           return;
         }
 
         grid.style.display = "grid";
+        lastDoc = snap.docs[snap.docs.length - 1];
 
         snap.forEach(doc => {
-          const art = doc.data();
-          const card = document.createElement("a");
-          card.href = `artwork.html?id=${doc.id}`;
-          card.className = "item-card";
-          card.innerHTML = `
-            <img class="item-img" src="${art.imageUrl || 'https://via.placeholder.com/300?text=Image'}" alt="${art.title || 'Artwork'}">
-            <div class="item-content">
-              <div class="item-title">${art.title || 'Untitled'}</div>
-              <div class="item-artist">by ${art.artistName || 'Unknown'}</div>
-              <div class="item-meta">
-                <span class="item-price">₹${(art.price || 0).toLocaleString()}</span>
-                <span class="item-likes">❤️ ${art.likeCount || 0}</span>
-              </div>
-            </div>
-          `;
-          grid.appendChild(card);
+          loadedArtIds.add(doc.id);
+          appendArtCard(doc);
         });
+
+        if (snap.docs.length < itemsPerPage) {
+          hasMoreData = false;
+        }
+
+        isLoading = false;
       } catch (err) {
-        console.error("Error loading most liked:", err);
+        console.error("Error loading artworks:", err);
         loading.innerHTML = "Failed to load artworks. Please try again later.";
+        isLoading = false;
       }
     }
 
+    // Load more artworks
+    async function loadMoreArts() {
+      if (isLoading || !hasMoreData || !lastDoc) return;
+
+      try {
+        isLoading = true;
+        loadingMore.style.display = "block";
+
+        const snap = await db.collection("arts")
+          .orderBy("likeCount", "desc")
+          .startAfter(lastDoc)
+          .limit(itemsPerPage)
+          .get();
+
+        loadingMore.style.display = "none";
+
+        if (snap.empty) {
+          hasMoreData = false;
+          endMessage.style.display = "block";
+          isLoading = false;
+          return;
+        }
+
+        lastDoc = snap.docs[snap.docs.length - 1];
+        let newItemsAdded = 0;
+
+        snap.forEach(doc => {
+          // Only add if not already loaded
+          if (!loadedArtIds.has(doc.id)) {
+            loadedArtIds.add(doc.id);
+            appendArtCard(doc);
+            newItemsAdded++;
+          }
+        });
+
+        // If fewer items returned than requested, we've reached the end
+        if (snap.docs.length < itemsPerPage) {
+          hasMoreData = false;
+          if (newItemsAdded > 0) {
+            endMessage.style.display = "block";
+          }
+        }
+
+        isLoading = false;
+      } catch (err) {
+        console.error("Error loading more artworks:", err);
+        loadingMore.style.display = "none";
+        isLoading = false;
+      }
+    }
+
+    // Append art card to grid
+    function appendArtCard(doc) {
+      const art = doc.data();
+      const card = document.createElement("a");
+      card.href = `artwork.html?id=${doc.id}`;
+      card.className = "item-card";
+      card.innerHTML = `
+        <img class="item-img" src="${art.imageUrl || 'https://via.placeholder.com/300?text=Image'}" alt="${art.title || 'Artwork'}">
+        <div class="item-content">
+          <div class="item-title">${art.title || 'Untitled'}</div>
+          <div class="item-artist">by ${art.artistName || 'Unknown'}</div>
+          <div class="item-meta">
+            <span class="item-price">₹${(art.price || 0).toLocaleString()}</span>
+            <span class="item-likes">❤️ ${art.likeCount || 0}</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    }
+
+    // Infinite scroll listener
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+        loadMoreArts();
+      }
+    });
+
     // Run on page load
-    loadMostLiked();
+    loadInitialArts();
 
     // Bottom nav navigation
     document.querySelectorAll('.nav-item').forEach(item => {
