@@ -6,6 +6,16 @@
     <priority>1.0</priority>
   </url>
 
+    <url>
+    <loc>https://art-kart.netlify.app/index</loc>
+    <priority>1.0</priority>
+  </url>
+
+    <url>
+    <loc>https://art-kart.netlify.app/blog</loc>
+    <priority>1.0</priority>
+  </url>
+  
   <url>
     <loc>https://art-kart.netlify.app/about</loc>
     <priority>0.8</priority>
